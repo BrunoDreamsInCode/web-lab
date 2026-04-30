@@ -60,7 +60,7 @@ web-lab/
 
 ## 🌐 Live demo
 
-Coming soon 🚀
+https://web-lab-kohl.vercel.app/
 
 ---
 
