@@ -38,13 +38,13 @@ Right now, the project includes:
 ---
 
 ## 📁 Project structure
-
+``` 
 web-lab/  
 ├── assets/ → Images and icons (SVGs, etc.)  
 ├── css/ → Stylesheet files  
 ├── index.html → Main page  
 ├── Style Guide.fig → Figma reference  
-
+``` 
 ---
 
 ## 🚧 Roadmap
