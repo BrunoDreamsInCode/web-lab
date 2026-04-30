@@ -1,0 +1,84 @@
+body {
+  background-color: #FFFFFF;
+  color: #111827;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.custom-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* NAV BASE */
+.nav-pills .nav-link {
+  color: #111827;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* NAV HOVER */
+.nav-pills .nav-link:hover {
+  color: #0b5ed7;
+  transform: translateY(-2px);
+}
+
+/* ACTIVE */
+.nav-pills .nav-link.active {
+  background-color: #0d6efd;
+  color: #FFFFFF;
+}
+
+/* hover APENAS no item ativo (Home) */
+.nav-pills .nav-link.active:hover {
+  background-color: #0b5ed7;
+  color: #FFFFFF;
+}
+
+/* FOCUS (remove outline padrão) */
+.nav-pills .nav-link:focus {
+  box-shadow: none;
+}
+
+/* CARD */
+.custom-card {
+  border: 1px solid #E5E7EB;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* BUTTON OUTLINE PRIMARY */
+.btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0b5ed7;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* BUTTON PRIMARY */
+.btn-primary {
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* NAV SPACING */
+.nav {
+  gap: 8px;
+}
