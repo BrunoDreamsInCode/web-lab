@@ -1,68 +1,77 @@
-# Web Lab
+# 📌 web-lab
 
-Projeto de estudo e desenvolvimento Front-End com foco em construção de interfaces modernas, responsivas e funcionais utilizando HTML, CSS e JavaScript puro.
-
-## 🚀 Visão do projeto
-
-O Web Lab é um projeto pessoal criado para praticar desenvolvimento de interfaces web a partir de um layout de referência, buscando máxima fidelidade visual e evolução constante das habilidades de front-end.
-
-Além de estudo técnico, o projeto também funciona como portfólio, demonstrando capacidade de execução, organização e evolução prática como desenvolvedor.
-
-## 🎯 Objetivos
-
-- Praticar HTML, CSS e JavaScript sem frameworks
-- Desenvolver interfaces responsivas (desktop e mobile)
-- Melhorar habilidades de layout e estruturação de UI
-- Construir um projeto real para portfólio profissional
-- Evoluir para oportunidades na área de desenvolvimento
-
-## ⚙️ Status atual
-
-O projeto está em fase inicial de desenvolvimento.
-
-### Implementado até agora:
-- Estrutura base do projeto
-- Navbar (primeira versão)
-
-### Em desenvolvimento:
-- Layout completo da versão web
-- Responsividade para mobile
-- Componentes de interface
-- Interações com JavaScript
-- Ajustes visuais baseados no design de referência
-
-## 🧰 Tecnologias utilizadas
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-
-## 📱 Responsividade
-
-O projeto será totalmente responsivo, com foco em:
-
-- Desktop (layout principal)
-- Mobile (adaptação completa)
-- Experiência consistente entre dispositivos
-
-## 🌐 Deploy
-
-Projeto disponível em produção:
-
-(Adicione aqui o link do Vercel)
-
-## 📌 Próximas melhorias
-
-- Finalizar todas as seções do layout
-- Implementar versão mobile completa
-- Adicionar interações com JavaScript
-- Melhorar organização e escalabilidade do código
-- Refinar UI/UX com base em boas práticas de mercado
-
-## 💡 Observação
-
-Este projeto faz parte de um processo de transição para a área de desenvolvimento, com foco em prática constante e construção de um portfólio sólido para oportunidades profissionais.
+Um laboratório pessoal de desenvolvimento front-end onde construo e testo pequenos componentes de interface e ferramentas web.
 
 ---
 
-Feito com foco em evolução contínua.
+## 🚀 Sobre o projeto
+
+O **web-lab** é um projeto pessoal criado para praticar e evoluir minhas habilidades em desenvolvimento front-end utilizando HTML, CSS e Bootstrap.
+
+A ideia é construir uma coleção de pequenas ferramentas dentro de uma única interface, funcionando como um ambiente de aprendizado e experimentação contínua.
+
+---
+
+## 🧠 O que estou aprendendo com este projeto
+
+- Estruturação semântica com HTML  
+- Estilização e layout com CSS  
+- Componentes e customização com Bootstrap  
+- Fundamentos de UI/UX  
+- Design responsivo  
+- Fluxo de desenvolvimento front-end  
+
+---
+
+## 🛠️ Funcionalidades atuais
+
+No momento, o projeto conta com:
+
+- Barra de navegação (Home / Tools / Contact / About)
+- Seção de apresentação pessoal
+- Botões para GitHub e LinkedIn com ícones SVG
+- Cards de ferramentas (interfaces em construção):
+  - Gerador de Senhas (em andamento)
+  - Timer (em andamento)
+  - Outras ferramentas em breve  
+
+---
+
+## 📁 Estrutura do projeto
+```
+    web-lab/
+    ├── assets/ # Imagens e ícones (SVGs, etc.)
+    ├── css/ # Arquivos de estilo
+    ├── index.html # Página principal
+    ├── Style Guide.fig # Referência de design no Figma
+``` 
+
+---
+
+## 🚧 Roadmap
+
+- Tornar o Gerador de Senhas funcional com JavaScript  
+- Implementar o Timer funcional  
+- Adicionar novas ferramentas utilitárias (conversores, geradores, etc.)  
+- Melhorar consistência visual e UI/UX  
+- Adicionar interações com JavaScript  
+- Publicar versão online (Render ou Vercel)  
+
+---
+
+## 🌐 Demonstração
+
+https://web-lab-kohl.vercel.app/
+
+---
+
+## 📬 Contato
+
+GitHub: https://github.com/BrunoDreamsInCode  
+LinkedIn: https://www.linkedin.com/in/bruno-henrique-domingos/
+
+---
+
+## ⚡ Observação
+
+Este projeto faz parte da minha jornada de aprendizado como analista de sistemas em transição para desenvolvimento front-end, com foco em prática constante e construção de portfólio.
