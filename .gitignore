@@ -1,0 +1,22 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Variáveis de ambiente
+.env
+.env.local
+
+# Vercel
+.vercel/
+
+# Dependências Node (caso use no futuro)
+node_modules/
+
+# Arquivos locais
+Referências/

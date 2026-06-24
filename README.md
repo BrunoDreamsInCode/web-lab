@@ -1,76 +1,59 @@
-# 📌 web-lab
+# 🎨 Color Palette
 
-A personal frontend development lab where I build and experiment with small web tools and UI components.
+Default color palette used across the project.
 
----
+## Primary Colors
 
-## 🚀 About the project
+| Name          | Hex       |
+| ------------- | --------- |
+| Primary       | `#0D6EFD` |
+| Primary Hover | `#0B5ED7` |
 
-**web-lab** is a personal project created to practice and improve my front-end development skills using HTML, CSS, and Bootstrap.
+## Background & Cards
 
-The idea is to build a collection of small, useful web tools inside a single interface — like a playground for learning and experimentation.
+| Name       | Hex       |
+| ---------- | --------- |
+| Background | `#FFFFFF` |
+| Card       | `#FFFFFF` |
 
----
+## Text Colors
 
-## 🧠 What I'm learning with this project
+| Name           | Hex       |
+| -------------- | --------- |
+| Primary Text   | `#212529` |
+| Secondary Text | `#6C757D` |
 
-- HTML structure and semantics  
-- CSS styling and layout  
-- Bootstrap components and customization  
-- UI/UX fundamentals  
-- Responsive design  
-- Front-end development workflow  
+## Borders
 
----
+| Name   | Hex       |
+| ------ | --------- |
+| Border | `#DEE2E6` |
 
-## 🛠️ Current features
+## CSS Variables
 
-Right now, the project includes:
+```css
+:root {
+    --primary: #0D6EFD;
+    --primary-hover: #0B5ED7;
 
-- Navigation bar (Home / Tools / Contact / About)
-- Personal presentation section
-- GitHub and LinkedIn buttons with SVG icons
-- Tool cards (UI placeholders):
-  - Password Generator (in progress)
-  - Timer (in progress)
-  - More tools coming soon
+    --background: #FFFFFF;
 
----
+    --card: #FFFFFF;
 
-## 📁 Project structure
-``` 
-web-lab/  
-├── assets/ → Images and icons (SVGs, etc.)  
-├── css/ → Stylesheet files  
-├── index.html → Main page  
-├── Style Guide.fig → Figma reference  
-``` 
----
+    --text-primary: #212529;
+    --text-secondary: #6C757D;
 
-## 🚧 Roadmap
+    --border: #DEE2E6;
+}
+```
 
-- Make Password Generator functional (JavaScript)
-- Build working Timer tool
-- Add more utility tools (converters, generators, etc.)
-- Improve UI/UX consistency
-- Add JavaScript interactions
-- Deploy online (Render)
+## Design Notes
 
----
+* Clean and modern Bootstrap-inspired palette.
+* High readability and accessibility.
+* Neutral whites and grays for a professional look.
+* Blue accent color for buttons, links, and interactive elements.
+* Suitable for portfolio, dashboard, and utility web applications.
 
-## 🌐 Live demo
-
-https://web-lab-kohl.vercel.app/
-
----
-
-## 📬 Contact
-
-GitHub: https://github.com/BrunoDreamsInCode  
-LinkedIn: https://www.linkedin.com/in/bruno-henrique-domingos/
-
----
-
-## ⚡ Note
-
-This project is part of my learning journey as a systems analyst expanding into front-end development.
+```
+```

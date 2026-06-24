@@ -1,0 +1,155 @@
+:root {
+    --primary: #0D6EFD;
+    --primary-hover: #0B5ED7;
+
+    --background: #FFFFFF;
+
+    --text-primary: #212529;
+    --text-secondary: #6C757D;
+
+    --border: #DEE2E6;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: var(--background);
+}
+
+/* Início Navbar ---------- Início Navbar */
+.navbar {
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;    
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 50px;
+}
+
+/* links */
+.mid-menu a {
+    text-decoration: none;
+    color: var(--text-primary);
+
+    display: flex;
+    align-items: center;
+    height: 64px;
+}
+
+
+
+/* logo start */
+.logo a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 21px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: auto;
+}
+
+.logo-primary {
+    color: var(--primary);
+}
+
+.logo-secondary {
+    color: var(--text-primary);
+}
+
+/* logo end */
+
+/* listas */
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu > .mid-menu > a:hover {
+    color: var(--primary);
+}
+
+.btn-inicio {
+    text-decoration: none;
+    background: var(--primary);
+    color: #fff;
+
+    padding: 8px 16px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+
+    height: auto;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+.btn-inicio:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+    transition: 0.2s;
+
+}
+
+
+
+.socials {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Fim Navbar ---------- Fim, Navbar */
+
+
+
+/* começo do hero --------------- fim do hero */
+
+.hero-container{
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-1,
+.hero-2 {
+    flex: 1;
+    height: 280px;
+}
+
+.hero-1 {
+    background-color: red;
+}
+
+.hero-2 {
+    background-color: blue;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
