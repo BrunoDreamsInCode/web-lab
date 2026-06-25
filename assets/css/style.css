@@ -2,13 +2,21 @@
     --primary: #0D6EFD;
     --primary-hover: #0B5ED7;
 
-    --background: #FFFFFF;
+    --background: #fcfefe;
+    --background2: #fefefe;
 
     --text-primary: #212529;
     --text-secondary: #6C757D;
 
     --border: #DEE2E6;
 }
+    /*cores gerais para textos simulando código*/
+.texto-azul { color: #0066FF; }        /* Palavras-chave */
+.texto-verde { color: #27C93F; }       /* Crases */
+.texto-amarelo { color: #E6A100; }     /* Nomes de função */
+.texto-mostarda { color: #D4A017; }    /* $ e ; e operadores */
+.texto-cinza { color: #8B8B8B; }       /* Comentários */
+
 
 /* reset */
 * {
@@ -17,6 +25,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Inter, sans-serif;
     background: var(--background);
@@ -24,68 +33,85 @@ body {
 
 /* Início Navbar ---------- Início Navbar */
 .navbar {
+    height: 75px;
+    align-items: center;
+
     border-bottom: 1px solid var(--border);
-    font-size: 12px;    
+    font-size: 15px;    
 }
 
 
 .container {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 0 50px;
 
     display: flex;
-    align-items: center;
+    align-items: center ;
     justify-content: space-between;
-
-    height: 50px;
 }
 
 /* links */
 .mid-menu a {
     text-decoration: none;
     color: var(--text-primary);
+    font-weight: 600;
 
     display: flex;
     align-items: center;
-    height: 64px;
+    height: 75px;
 }
 
 
 
-/* logo start */
+
+/* logo start ------------- logo start */
+/*div da logo */
+.logo {
+    display: flex;
+    justify-self: start;
+    align-items: center;
+}
+/*texto da Logo */
 .logo a {
     text-decoration: none;
     font-weight: 700;
-    font-size: 21px;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    height: auto;
-}
+    font-size: 25px;
+    word-spacing: -15px;  
+    letter-spacing: -2px;
 
+}
+/*Cor para BHD da logo */
 .logo-primary {
     color: var(--primary);
 }
-
+/*Cor para Tools da logo */
 .logo-secondary {
     color: var(--text-primary);
 }
+/* fim logo ------------- fim logo */
 
-/* logo end */
+
 
 /* listas */
 .menu{
     display: flex;
     list-style: none;
     gap: 20px;
-    align-items: center;
+    list-style: none;
 }
 
+/*Espaço das opções centrais do menu*/
+.mid-menu-inicio{
+    display: flex;
+    align-items: center;
+}
+/*Hover das opções centrais do menu*/
 .menu > .mid-menu > a:hover {
     color: var(--primary);
 }
 
+/*Visual para o botão do "Início"*/
 .btn-inicio {
     text-decoration: none;
     background: var(--primary);
@@ -102,8 +128,7 @@ body {
 
     transition: 0.2s;
 }
-
-
+/*Hover visual para o botão do "Início"*/
 .btn-inicio:hover {
     background-color: var(--primary-hover);
     color: #fff;
@@ -113,43 +138,211 @@ body {
 
 
 
+
+/*Configuração para os ícones da navbar à direita*/
 .socials {
     display: flex;
-    list-style: none;
-    gap: 15px;
     align-items: center;
+    gap: 15px;
+    list-style: none;
 }
-
 /* Fim Navbar ---------- Fim, Navbar */
 
 
 
-/* começo do hero --------------- fim do hero */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* começo do hero --------------- começo do hero */
 .hero-container{
-    max-width: 1200px;
-    margin: 25px auto;
+    width: 1250px;
+    margin: 45px auto;
     padding: 0 50px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 20px;
 }
 
 .hero-1,
 .hero-2 {
     flex: 1;
-    height: 280px;
+    height: 300px;
 }
 
+/*Começo da div1 --------------- Começo da div1 */
 .hero-1 {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    
+    border-radius: 8px;
 }
 
-.hero-2 {
-    background-color: blue;
-    border: 1px solid var(--border);
+/*Título do primeiro bloco*/
+.hero1-title h1 {
+    font-size: 36px;
+    font-weight: 700;
+    
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+/*Parte azul do título do primeiro bloco*/
+.hero1-h1-texto-azul {
+    color: var(--primary);
+    font-weight: 700;
+}
+/*subtítulo do primeiro bloco*/
+.hero1-subtitle {
+    color: var(--text-secondary);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+/*margem do parágrafo do subtítulo do primeiro bloco*/
+.hero1-subtitle p {
+    margin-bottom: 4px;
+}
+/*dois botões do primeiro bloco*/
+.hero1-botoes {
+    display: flex;
+    gap: 25px;
+    margin-top: 8px;
+}
+/*botão azul de projetos*/
+.btn-projetos {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--primary);
+    color: #fff;
+
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/*hover do botão azul de projetos*/
+.btn-projetos:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+/*botão github*/
+.btn-github {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    gap: 8px;
+
+
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
     border-radius: 8px;
+
+    padding: 10px 30px;
+
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/*hover do botão do github*/
+.btn-github:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+}
+/*Fim da div1 --------------- Fim da div1 */
+
+
+
+
+
+/*Começo da div2 --------------- Começo da div2 */
+.hero-2 {
+    padding: 8px;
+    margin-top: 4px;
+    background-color: var(--background2);
+    border: solid var(--border) 2px;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+
+
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+/*Configuração de display das bolinhas*/
+.hero2-mac-icons {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+}
+/*dimenções das três bolinhas*/
+.mac-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/*Cores das bolinhas coloridas MacOS*/
+.mac-dot.red { background: #FF5F56; }
+.mac-dot.yellow { background: #FFBD2E; }
+.mac-dot.green { background: #27C93F; }
+
+
+.hero2-codigo p,
+.hero2-codigo-funcao p,
+.hero2-codigo-comentario p {
+    letter-spacing: 1px;
+}
+
+
+.hero2-codigo,
+.hero2-codigo-funcao,
+.hero2-codigo-comentario
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+    padding: 12px 16px;
+}
+
+.hero2-codigo-comentario {
+    margin-top: 8px;
+}
+
+
+/*Fim da div2 --------------- Fim da div2 */
+
+
+
+/* fim do hero --------------- fim do hero */
+
+
