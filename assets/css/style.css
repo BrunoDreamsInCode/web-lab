@@ -16,8 +16,6 @@
 .texto-amarelo { color: #E6A100; }     /* Nomes de função */
 .texto-mostarda { color: #D4A017; }    /* $ e ; e operadores */
 .texto-cinza { color: #8B8B8B; }       /* Comentários */
-
-
 /* reset */
 * {
     margin: 0;
@@ -39,8 +37,6 @@ body {
     border-bottom: 1px solid var(--border);
     font-size: 15px;    
 }
-
-
 .container {
     max-width: 1250px;
     margin: 0 auto;
@@ -61,10 +57,6 @@ body {
     align-items: center;
     height: 75px;
 }
-
-
-
-
 /* logo start ------------- logo start */
 /*div da logo */
 .logo {
@@ -91,8 +83,6 @@ body {
 }
 /* fim logo ------------- fim logo */
 
-
-
 /* listas */
 .menu{
     display: flex;
@@ -100,7 +90,6 @@ body {
     gap: 20px;
     list-style: none;
 }
-
 /*Espaço das opções centrais do menu*/
 .mid-menu-inicio{
     display: flex;
@@ -110,7 +99,6 @@ body {
 .menu > .mid-menu > a:hover {
     color: var(--primary);
 }
-
 /*Visual para o botão do "Início"*/
 .btn-inicio {
     text-decoration: none;
@@ -135,10 +123,6 @@ body {
     transition: 0.2s;
 
 }
-
-
-
-
 /*Configuração para os ícones da navbar à direita*/
 .socials {
     display: flex;
@@ -189,9 +173,8 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    padding: 30px;
     
-    border-radius: 8px;
+
 }
 
 /*Título do primeiro bloco*/
@@ -278,14 +261,8 @@ body {
 }
 /*Fim da div1 --------------- Fim da div1 */
 
-
-
-
-
 /*Começo da div2 --------------- Começo da div2 */
 .hero-2 {
-    padding: 8px;
-    margin-top: 4px;
     background-color: var(--background2);
     border: solid var(--border) 2px;
     border-radius: 8px;
@@ -337,12 +314,93 @@ body {
 .hero2-codigo-comentario {
     margin-top: 8px;
 }
-
-
 /*Fim da div2 --------------- Fim da div2 */
-
-
 
 /* fim do hero --------------- fim do hero */
 
 
+
+
+
+
+/*Começo do wide banner --------------- Começo do wide banner */
+.wide-banner{
+    width: 1150px;
+    height: 120px;
+    margin: 45px auto;
+    padding: 0 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border: solid var(--border) 1px;  /* Borda cinza temporária */
+    border-radius: 8px; 
+}
+
+/*Alinhamento da wide bar + bordas -------------- Alinhamento da wide bar + bordas*/
+.wb-projetos,
+.wb-funcionais,
+.wb-tecnologias,
+.wb-foco {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 15px;
+
+    padding: 0 20px;
+
+    /* Divisória entre cards */
+    border-right: 1px solid var(--border);
+
+}
+
+/* Remove a divisória do último card */
+.wb-foco {
+    border-right: none;
+}
+
+
+
+
+/* Card 1 - Projetos (Azul) */
+.wb-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    flex-shrink: 0;  /* Não diminui o ícone */
+}
+/*Inforação azul dentro do quadrante da widebar*/
+.wb-conteudo span {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+/*Texto padrão dentro do quadrante da widebar*/
+.wb-conteudo p{
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2; 
+}
+
+
+/* Cores de fundo dos ícones */
+.wb-projetos .wb-icone { background: #E8F1FF; }
+.wb-funcionais .wb-icone { background: #E6F9EF; }
+.wb-tecnologias .wb-icone { background: #FFF8E7; }
+.wb-foco .wb-icone { background: #F3E8FF; }
+
+/* Cores dos SVGs */
+.wb-projetos .wb-icone svg { stroke: #0066FF; }
+.wb-funcionais .wb-icone svg { fill: #27C93F; }
+.wb-tecnologias .wb-icone svg { stroke: #E6A100; }
+.wb-foco .wb-icone svg { fill: #8B2EF0; stroke: #8B2EF0; }
+/*Fim do wide banner --------------- Fim do wide banner */
+/*Começo do wide banner --------------- Começo do wide banner */
