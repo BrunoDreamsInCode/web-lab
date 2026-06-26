@@ -268,8 +268,6 @@ body {
 
 /*Começo da div2 --------------- Começo da div2 */
 .hero-2 {
-
-
     background-color: var(--background2);
     border: solid var(--border) 2px;
     border-radius: 8px;
@@ -300,10 +298,7 @@ body {
 .mac-dot.yellow { background: #FFBD2E; }
 .mac-dot.green { background: #27C93F; }
 
-
-
-
-
+/*Configuração da simulação de código no 2° quadrante do primeiro banner*/
 .hero2-codigo,
 .hero2-codigo-funcao,
 .hero2-codigo-comentario
@@ -314,12 +309,11 @@ body {
     gap: 8px;
     padding: 12px 16px;
 }
-
+/*Simulação do comentário no ''código''*/
 .hero2-codigo-comentario {
     margin-top: 8px;
 }
 /*Fim da div2 --------------- Fim da div2 */
-
 /* fim do hero --------------- fim do hero */
 
 
@@ -385,7 +379,7 @@ body {
     color: var(--text-secondary);
     font-size: 16px;
     font-weight: 500;
-    line-height: 1.2; 
+    line-height: 1.2;
 }
 
 
@@ -420,7 +414,7 @@ body {
     justify-content: center;
 }
 
-
+/*Div central do container de destaques - Contém título/subtítulo*/
 .wc-text{
     display: flex;
     flex-direction: column;
@@ -429,7 +423,7 @@ body {
     gap: 5px;
 } 
 
-
+/*Título do container de destaques*/
 .wc-text h2{
     font-size: 25px;
     font-weight: 700;
@@ -439,7 +433,7 @@ body {
 
     color: var(--text-primary);
 }
-
+/*Subtítulo do container de destaques*/
 .wc-text h3{
     font-size: 18px;
     font-weight: 500;
