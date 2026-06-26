@@ -27,6 +27,8 @@
 body {
     font-family: Inter, sans-serif;
     background: var(--background);
+    font-weight: 500;  
+    color: var(--text-primary);
 }
 
 /* Início Navbar ---------- Início Navbar */
@@ -51,7 +53,7 @@ body {
 .mid-menu a {
     text-decoration: none;
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 500;
 
     display: flex;
     align-items: center;
@@ -112,7 +114,7 @@ body {
     align-items: center;
 
     height: auto;
-    font-weight: 600;
+    font-weight: 600    ;
 
     transition: 0.2s;
 }
@@ -190,13 +192,16 @@ body {
 .hero1-h1-texto-azul {
     color: var(--primary);
     font-weight: 700;
+    line-height: 1.2;
 }
 /*subtítulo do primeiro bloco*/
 .hero1-subtitle {
+    max-width: 450px; 
+
     color: var(--text-secondary);
     font-size: 18px;
-    font-weight: 400;
-    line-height: 1.2;
+    font-weight: 500;
+    line-height: 1.6;
 }
 /*margem do parágrafo do subtítulo do primeiro bloco*/
 .hero1-subtitle p {
@@ -263,6 +268,8 @@ body {
 
 /*Começo da div2 --------------- Começo da div2 */
 .hero-2 {
+
+
     background-color: var(--background2);
     border: solid var(--border) 2px;
     border-radius: 8px;
@@ -271,6 +278,7 @@ body {
     font-weight: 500;
     line-height: 1.2;
 
+    letter-spacing: 1.5px; 
 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
@@ -293,11 +301,7 @@ body {
 .mac-dot.green { background: #27C93F; }
 
 
-.hero2-codigo p,
-.hero2-codigo-funcao p,
-.hero2-codigo-comentario p {
-    letter-spacing: 1px;
-}
+
 
 
 .hero2-codigo,
@@ -338,7 +342,6 @@ body {
     border: solid var(--border) 1px;  /* Borda cinza temporária */
     border-radius: 8px; 
 }
-
 /*Alinhamento da wide bar + bordas -------------- Alinhamento da wide bar + bordas*/
 .wb-projetos,
 .wb-funcionais,
@@ -355,15 +358,10 @@ body {
     border-right: 1px solid var(--border);
 
 }
-
 /* Remove a divisória do último card */
 .wb-foco {
     border-right: none;
 }
-
-
-
-
 /* Card 1 - Projetos (Azul) */
 .wb-icone {
     display: flex;
@@ -385,8 +383,8 @@ body {
 .wb-conteudo p{
     margin-top: 5px;
     color: var(--text-secondary);
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 1.2; 
 }
 
@@ -403,4 +401,52 @@ body {
 .wb-tecnologias .wb-icone svg { stroke: #E6A100; }
 .wb-foco .wb-icone svg { fill: #8B2EF0; stroke: #8B2EF0; }
 /*Fim do wide banner --------------- Fim do wide banner */
-/*Começo do wide banner --------------- Começo do wide banner */
+
+
+
+
+
+
+
+/*Container com texto apresentando destaques*/
+/*Container principal*/
+.wide-container{
+    width: 1150px;
+    margin: 45px auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.wc-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+} 
+
+
+.wc-text h2{
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1.2;
+    margin-bottom: 4px;
+
+    color: var(--text-primary);
+}
+
+.wc-text h3{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: var(--text-secondary);
+}
+
+
+
