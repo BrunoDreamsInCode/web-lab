@@ -402,7 +402,7 @@ body {
 
 
 
-/*Container com texto apresentando destaques*/
+/*Começo container com texto apresentando destaques*/
 /*Container principal*/
 .wide-container{
     width: 1150px;
@@ -441,6 +441,75 @@ body {
 
     color: var(--text-secondary);
 }
+/*Fim container com texto apresentando destaques*/
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*Começo bloco demonstrando as ferramentas */
+
+/*Container que acomoda todos as divs de ferramentas*/
+.bloco-ferramentas{
+    display: flex;
+    width: 1150px;
+    height: 350px;
+    margin: 45px auto;
+    padding: 0 0;
+    gap: 20px 20px;
+}
+/*Todas as divs com ferramentas*/
+.ferramenta{
+    display: flex;
+    flex: 1;
+    
+    border: solid var(--border) 1px;  /* Borda cinza temporária */
+    border-radius: 8px; 
+}
+/*Background claro do SVG de cada ferramenta*/
+.ico-tool-blue svg { background: #E8F1FF; }
+.ico-tool-blue svg { background: #E8F1FF; }
+.ico-tool-green svg{ background: #E6F9EF; }
+
+/*Configuração do espaço ocupado do ícone das ferramentas*/
+.ico-tool-blue svg, 
+.ico-tool-green svg{
+    padding: 15px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    flex-shrink: 0;  
+}
+/*Texto interno primário das divs das ferramentas*/
+.texto-tool{
+     display: flex;
+     flex-direction: column;
+
+     padding-top: 15px;
+     padding-right: 10px;
+     margin-top: 10px;
+     gap: 10px;
+}
+/*Texto interno secundário das divs das ferramentas*/
+.texto-tool p{
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+/*Fim bloco demonstrando as ferramentas */
