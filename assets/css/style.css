@@ -1,3 +1,71 @@
+/*COMEÇO - Página temporária para Mobile */
+/*Esconder aviso*/
+.mobile-aviso {
+    display: none;
+}
+
+/* Em telas pequenas, visual para mostrar aviso - indicando que mobile está em construção */
+@media (max-width: 768px) {
+    .mobile-aviso {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: var(--background);
+        z-index: 9999;
+        font-family: Inter, sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+/*Visual para o AVISO PRINCIPAL */
+    .mobile-aviso-conteudo h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+    }
+
+/*Visual para o descrição do aviso*/
+    .mobile-aviso-conteudo p {
+        font-size: 16px;
+        color: var(--text-secondary);
+        margin-bottom: 5px;
+    }
+
+    /* Esconde TODO o conteúdo do site - pois mobile será implementado por ultimo*/
+    .navbar,
+    .hero-container,
+    .wide-banner,
+    .wide-container,
+    .bloco-ferramentas {
+        display: none !important;
+    }
+}
+/*FIM Página temporária para Mobile FIM*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
     --primary: #0D6EFD;
     --primary-hover: #0B5ED7;
@@ -461,7 +529,7 @@ body {
 .bloco-ferramentas {
     display: flex;
     width: 1150px;
-    height: 350px;
+    height: auto;
     margin: 45px auto;
     padding: 0;
     gap: 20px;
@@ -474,6 +542,7 @@ body {
 
 
     border: solid var(--border) 1px;  /* Borda cinza temporária */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     border-radius: 8px; 
 }
 
@@ -485,10 +554,11 @@ body {
     margin: 10px;
     gap: 20px;
 
+
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 
 }
 
@@ -531,13 +601,8 @@ body {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.2;
-    
-
     margin-top: 5px;
 }
-
-
-
 
 
 /*Parte de BAIXO do quadrado de ferramentas (botões, tags, tecnologias)*/
@@ -546,11 +611,11 @@ body {
     flex-direction: column;
     align-content: start;
 
-    padding-right: 15px;
     margin-left: 20px;
+    margin-right: 20px;
 }
 
-
+/*Botão to ''abrir ferramenta'' */
 .btn-abrir-ferramenta {
     display: flex;
     height: 40px;
@@ -558,6 +623,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+
 
     background: var(--primary);
     color: #fff;
@@ -571,13 +637,136 @@ body {
     transition: 0.2s;
 }
 
-
+/*Hover to ''abrir ferramenta'' */
 .btn-abrir-ferramenta:hover{
-        background: var(--primary-hover);
+    background: var(--primary-hover);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
 }
 
+
+/*Botões das ferramentas "ver html/css/javascript" */
+.ver-codigo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 10px;
+    gap: 2px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*Botões VER "CSS/HTML/JAVASCRIPT" */
+.btn-ver-codigo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 30px;
+    padding: 15px 15px;
+
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-ver-codigo:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+
+/*Divisão do botão isolado "GITHUB" em Ferramentas */
+.ver-github{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*Estilo do botão GitHub em Ferramenta */
+.btn-ver-github{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    height: 30px;
+    padding: 15px 15px;
+
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/*Hover do botão GitHub em Ferramenta */
+.btn-ver-github:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+.tag-tecnologias {
+    display: flex;
+    align-items: center;
+
+    margin: 20px;
+    padding-bottom: 10px;
+    gap: 10px;
+}
+
+.tag-html,
+.tag-css,
+.tag-js
+ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 15px;
+    border-radius: 5px; 
+    height: 30px;
+
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/*COMEÇO Configuração de cores das tags de tencologia COMEÇO*/
+/* HTML - Laranja */
+.tag-html {
+    background: #FFF0E6;     
+    color: #E65100;          
+}
+/* CSS - Azul */
+.tag-css {
+    background: #E8F1FF;     
+    color: #0066FF;          
+}
+/* JavaScript - Roxo */
+.tag-js {
+    background: #F3E8FF;      
+    color: #8B2EF0;           
+}
+/*FIM Configuração de cores das tags de tencologia FIM*/
 
 
 
