@@ -767,7 +767,287 @@ body {
     color: #8B2EF0;           
 }
 /*FIM Configuração de cores das tags de tencologia FIM*/
-
-
-
 /*Fim bloco demonstrando as ferramentas */
+
+
+
+
+
+/*COMEÇO Container com botão 'VER PROJETOS' COMEÇO */
+.btn-ver-projetos {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    gap: 8px;
+
+
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+
+    padding: 10px 30px;
+
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/*hover do botão do github*/
+.btn-ver-projetos:hover {
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+
+
+
+/*COMEÇO container com SOBRE+TECNOLGOIAS USADAS (2 BLOCOS) COMEÇO*/
+/*Container principal*/
+.hero-container2{
+    width: 1250px;
+    margin: 45px auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+/*Configuração dos dois blocos*/
+.hero1-block, .hero2-block{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: auto; /*temporário*/
+
+    padding: 30px 30px 20px 30px;
+    gap: 10px;
+
+    border: solid var(--border) 1px;  /* Borda cinza temporária */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+}
+
+/*Configuração de paráfrafo do bloco 1 e 2*/
+.hero1-block p,
+.hero2-block p{
+    margin-bottom: 10px;
+
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/*Título SAIBA MAIS SOBRE*/
+.hero1-titulo h3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;  
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    color: var(--text-primary);
+}
+
+
+/*Botão SAIBA MAIS SOBRE*/
+.btn-saiba-sobre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 45px;
+    gap: 8px;
+    width: 50%;
+
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+
+    padding: 10px 30px;
+
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/*hover do botão do github*/
+.btn-saiba-sobre:hover {
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+/*Fim do bloco1 --------------- Fim do bloco1*/
+
+
+/*COMEÇO do bloco2 --------------- COMEÇO do bloco2*/
+/*Configuração da grid do bloco 2*/
+.hero2-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 colunas iguais */
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/*Configurações dos itens individuais de dentro da grid*/
+.hero2-item-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+    padding: 5px 5px;
+
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/*Configuração das imagens(ícones das tecnologias) da grid*/
+.ico-grid img{
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    display: block;
+}
+
+/*Configuração de alinhamento das imagens(ícones das tecnologias) da grid*/
+.ico-grid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+/*FIM container com SOBRE+TECNOLGOIAS USADAS (2 BLOCOS) FIM*/
+
+
+
+
+/*COMEÇO container com as informações de contato (ÍCONE+TEXTO+BOTÕES) COMEÇO*/
+.wide-container2{
+    width: 1150px;
+    height: 140px;
+
+    margin: 45px auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: solid var(--border) 1px;  /* Borda cinza temporária */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+
+    background-color: #E8F1FF;
+}
+
+.icone-contato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.icone-contato img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.botoes-contato{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.btn-contato {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    gap: 8px;
+
+
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+    background-color: var(--background);
+    border-radius: 8px;
+
+    padding: 20px 25px;
+
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/*hover do botão do github*/
+.btn-contato:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+
+.texto-contato{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.texto-contato h2{
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1.2;
+    margin-bottom: 4px;
+
+    color: var(--text-primary);
+}
+
+.texto-contato h3{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: var(--text-primary);
+}
+/*FIM container com as informações de contato (ÍCONE+TEXTO+BOTÕES) FIM*/
+
+
+
+
+
+
+/*COMEÇO rodapé COMEÇO*/
+.footer{
+    width: 1150px;
+    margin: 45px auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.footer h3{
+        font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: var(--text-primary);
+}
+/*FIM rodapé FIM*/
