@@ -91,6 +91,15 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+#ir-para-topo,
+#ir-para-projetos,
+#ir-para-contato{
+    scroll-margin-top: 90px;
+}
 
 body {
     font-family: Inter, sans-serif;
@@ -101,11 +110,17 @@ body {
 
 /* Início Navbar ---------- Início Navbar */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     height: 75px;
     align-items: center;
 
+    background: #fff; /* importante */
     border-bottom: 1px solid var(--border);
-    font-size: 15px;    
+
+    font-size: 15px;
 }
 .container {
     max-width: 1250px;
@@ -1051,3 +1066,8 @@ body {
     color: var(--text-primary);
 }
 /*FIM rodapé FIM*/
+
+
+
+
+
