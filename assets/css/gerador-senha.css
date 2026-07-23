@@ -1,0 +1,428 @@
+/*COMEÇO - Página temporária para Mobile */
+/*Esconder aviso*/
+.mobile-aviso {
+    display: none;
+}
+
+/* Em telas pequenas, visual para mostrar aviso - indicando que mobile está em construção */
+@media (max-width: 768px) {
+    .mobile-aviso {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: var(--background);
+        z-index: 9999;
+        font-family: Inter, sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+/*Visual para o AVISO PRINCIPAL */
+    .mobile-aviso-conteudo h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+    }
+
+/*Visual para o descrição do aviso*/
+    .mobile-aviso-conteudo p {
+        font-size: 16px;
+        color: var(--text-secondary);
+        margin-bottom: 5px;
+    }
+
+    /* Esconde TODO o conteúdo do site - pois mobile será implementado por ultimo*/
+    .navbar,
+    .hero-container,
+    .wide-banner,
+    .wide-container,
+    .bloco-ferramentas {
+        display: none !important;
+    }
+}
+/*FIM Página temporária para Mobile FIM*/
+
+
+
+
+:root {
+    --primary: #0D6EFD;
+    --primary-hover: #0B5ED7;
+
+    --background: #fcfefe;
+    --background2: #fefefe;
+
+    --text-primary: #212529;
+    --text-secondary: #6C757D;
+
+    --border: #DEE2E6;
+}
+
+/*Disposição de cores para utilizar - tons escuros e tons auxiliares claros*/
+.principal-azul { color: #0066FF; }        
+.principal-verde { color: #27C93F; }      
+.principal-amarelo { color: #E6A100; }     
+.principal-roxo { color: #8B2EF0}
+.secundario-azul { background: #E8F1FF; }
+.secundario-verde { background: #E6F9EF; }
+.secundario-amarelo { background: #FFF8E7; }
+.secundario-roxo { background: #F3E8FF; }
+.texto-cinza { color: #8B8B8B; }      
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/*COMEÇO Configuração de fontes COMEÇO*/
+h1{
+    font-size: 36px;
+    font-weight: 700;
+    
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+h2{
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1.2;
+    margin-bottom: 4px;
+
+    color: var(--text-primary);
+}
+
+h3{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: var(--text-secondary);
+}
+
+.subtitulo{
+    color: var(--text-secondary);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+
+
+
+/*FIM Configuração de fontes FIM*/
+
+
+
+
+#ir-para-topo,
+#ir-para-projetos,
+#ir-para-contato{
+    scroll-margin-top: 90px;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: var(--background);
+    font-weight: 500;  
+    color: var(--text-primary);
+}
+
+/* Início Navbar ---------- Início Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 75px;
+    align-items: center;
+
+    background: #fff; /* importante */
+    border-bottom: 1px solid var(--border);
+
+    font-size: 15px;
+}
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+}
+
+/* links */
+.mid-menu a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    height: 75px;
+}
+/* logo start ------------- logo start */
+/*div da logo */
+.logo {
+    display: flex;
+    justify-self: start;
+    align-items: center;
+}
+/*texto da Logo */
+.logo a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    word-spacing: -15px;  
+    letter-spacing: -2px;
+
+}
+/*Cor para BHD da logo */
+.logo-primary {
+    color: var(--primary);
+}
+/*Cor para Tools da logo */
+.logo-secondary {
+    color: var(--text-primary);
+}
+/* fim logo ------------- fim logo */
+
+/* listas */
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    list-style: none;
+}
+/*Espaço das opções centrais do menu*/
+.mid-menu-inicio{
+    display: flex;
+    align-items: center;
+}
+/*Hover das opções centrais do menu*/
+.menu > .mid-menu > a:hover {
+    color: var(--primary);
+}
+/*Visual para o botão do "Início"*/
+.btn-inicio {
+    text-decoration: none;
+    background: var(--primary);
+    color: #fff;
+
+    padding: 8px 16px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+
+    height: auto;
+    font-weight: 600    ;
+
+    transition: 0.2s;
+}
+/*Hover visual para o botão do "Início"*/
+.btn-inicio:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+    transition: 0.2s;
+
+}
+/*Configuração para os ícones da navbar à direita*/
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+}
+/* Fim Navbar ---------- Fim, Navbar */
+
+/* CONFIGURAÇÃO DO CONTEÚDO GERAL DA PÁGINA */
+.todo-conteudo-site{
+    width: 1250px;
+    margin: 100px auto;
+}
+
+
+
+
+
+
+
+
+
+/*COMEÇO apresentação da ferramenta COMEÇO*/
+.hero-container{
+    display: flex;
+    flex-direction: row;
+
+    height: auto;
+}
+
+/*div do ícone GRANDE contendo a IMAGEM PRINCIPAL da ferramenta */
+.icone-ferramenta-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    flex-shrink: 0;
+}
+
+/*Configuração do tamanho do ícone SVG*/
+.icone-ferramenta-principal svg {
+    width: 100px;
+    height: 100px;
+}
+
+/*Divisão onde contém toda a descrição principal da ferramenta*/
+.hero-container-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    width: auto;
+
+    padding: 10px;
+
+    margin-left: 40px;
+}
+
+.tag-tipo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2px 15px 2px 15px;
+    border-radius: 5px;
+}
+
+
+.texto-ferramenta > h1{
+    padding-top: 20px;
+    margin: 0;
+}
+
+.texto-ferramenta > p{
+    padding-top: 10px;
+    margin: 0;
+}
+
+.tag-tipo > span{
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/*Configuração dos ícones auxiliares (checkmark, escudo, cadeado) */
+.icones-auxiliares-ferramenta{
+    display: flex;    
+    margin-top: auto;  
+    gap: 15px;
+
+}
+
+/* Configuração de display dos ícones e descrições (pequenos - checkmark, escudo, cadeado) */
+.ico-aux{
+    display: flex;
+    margin-right: 20px;
+
+}
+
+/* Configuração do fundo claro dos ícones pequenos (checkmark, escudo, cadeado) */
+.ico-aux-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 34px;
+    height: 34px;
+    
+    margin-right: 5px;
+    border-radius: 8px;
+
+    flex-shrink: 0;
+}
+
+.ico-aux-bg svg{
+    width: 22px;
+    height: 22px;
+
+    display: block;
+}
+
+/* Configuração do comentário ao lado dos ícones pequenos (checkmark, escudo, cadeado) */
+.ico-aux > span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*FIM apresentação da ferramenta FIM*/
+
+
+
+
+
+
+
+
+
+
+/*COMEÇO utilização da ferramenta COMEÇO*/
+.container-central-ferramenta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 80px;
+    height: 600px; /*temporário*/
+    
+    
+    border: solid var(--border) 1px;  /* Borda cinza temporária */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+}
+/*FIM utilização da ferramenta FIM*/
+
+
+
+
+/*COMEÇO rodapé COMEÇO*/
+.footer{
+    width: 1150px;
+    margin: 45px auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.footer h3{
+        font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: var(--text-primary);
+}
+/*FIM rodapé FIM*/
+

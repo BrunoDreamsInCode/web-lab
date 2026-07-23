@@ -602,21 +602,18 @@ body {
 .texto-tool{
     display: flex;
     flex-direction: column;
+    padding-top: 2px;
+    padding-bottom: 2px;
 
-    align-items: center;
-    justify-content: center;
-
-    line-height: 1.0;
-
+    align-items: start;
 }
 
 /*Texto interno secundário das divs das ferramentas*/
 .texto-tool p{
     color: var(--text-secondary);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 1.2;
-    margin-top: 5px;
 }
 
 
