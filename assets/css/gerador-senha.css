@@ -313,7 +313,7 @@ body {
 }
 
 
-.texto-ferramenta > h1{
+.texto-ferramenta > h2{
     padding-top: 20px;
     margin: 0;
 }
@@ -342,7 +342,6 @@ body {
 .ico-aux{
     display: flex;
     margin-right: 20px;
-
 }
 
 /* Configuração do fundo claro dos ícones pequenos (checkmark, escudo, cadeado) */
@@ -403,6 +402,271 @@ body {
 
 
 
+
+
+
+
+
+
+/*COMEÇO ver código fonte COMEÇO*/
+.wide-banner-codf{
+    margin-top: 80px;
+
+    display: flex;
+    justify-content: space-between;
+
+    height: auto;
+    padding: 40px;
+    width: 100%;
+
+
+    /*temporário*/
+    border: solid var(--border) 1px;  /* Borda cinza temporária */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+}
+
+/*Divisão contendo informações (título/subtitulo do cód fonte)*/
+.wb-block1-codf{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 40%;
+    gap: 10px;
+}
+
+/*Configuração do texto do subtitulo do banner de código fonte*/
+.wb1-subtitulo-codf{
+    width: 100%;           
+    margin-top: 5px;
+}
+
+
+
+/*Configuração do background do ícone de CÓDIGO*/
+.wb1-ico-codf {
+    display: flex;                    
+    align-items: center;              
+    justify-content: center;         
+
+    padding-left: 2px;
+    width: 40px;                      
+    height: 40px;
+    border-radius: 10px;            
+    flex-shrink: 0;
+}
+
+/*Configuração do tamanho do SVG de CÓDIGO*/
+.wb1-ico-codf svg {          
+    width: 30px;
+    height: 30px;   
+}
+
+.titulo-secundario{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    color: var(--text-primary);
+}
+
+
+
+
+
+/*Divisão contendo informações (botões para ver HTML/CSS/JS/GITHUB)*/
+.wb-block2-codf{
+    display: flex;
+    align-items: center;
+
+    width: 50%;
+    gap: 20px;
+
+    margin-right: 2px;
+
+}
+
+.ico-tecnolog{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border: solid var(--border) 2px; 
+
+    border-radius: 8px; 
+}
+
+.ico-tec > img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 35px;
+    height: 35px;
+
+}
+
+
+.ico-tecnolog > span{
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.btn-tecnologia {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border: solid var(--border) 2px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+    background: transparent;
+}
+
+.btn-tecnologia img {
+    width: 35px;
+    height: 35px;
+}
+
+.btn-tecnologia span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.btn-tecnologia:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/*FIM ver código fonte FIM*/
+
+
+
+
+
+
+
+
+/*COMEÇO divisão do "SOBRE A FUNCIONALIDADE" COMEÇO*/
+.wide-banner-sobre{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    padding: 40px;
+    width: 100%;
+
+
+    /*temporário*/
+    border: solid var(--border) 1px;  /* Borda cinza temporária */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+
+}
+
+
+
+/*Divisão contendo informações (título/subtitulo do cód fonte)*/
+.wb-block1-sobre{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    gap: 15px;
+}
+
+/*Configuração do texto do subtitulo do banner de código fonte*/
+.wb1-subtitulo-sobre{
+    width: 100%;           
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+.wb-block2-sobre{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.wb2-ico-codf svg{
+    display: flex;
+    width: 30px;
+    height: 30px; 
+}
+
+
+.ico-aux-cf{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.text-span{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.icones-auxiliares-cf{
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 15px;
+    gap: 15px;
+
+}
+
+.ico-aux-bg-cf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.ico-aux-bg-cf svg{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
 /*COMEÇO rodapé COMEÇO*/
 .footer{
     width: 1150px;
@@ -418,7 +682,7 @@ body {
 }
 
 .footer h3{
-        font-size: 18px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 1.6;
 
