@@ -1,9 +1,64 @@
-/*COMEÇO - Página temporária para Mobile */
-/*Esconder aviso*/
+:root {
+    /* ========== 1. TIPOGRAFIA ========== */
+    --font-family: "Inter", sans-serif;
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 25px;
+
+    --font-size-navbar: 15px;
+
+    /* ========== 2. CORES PRINCIPAIS ========== */
+    --primary: #0D6EFD;
+    --primary-hover: #1D4ED8;
+    --background: #FCFEFE;
+    --surface: #FFFFFF;
+    --text-primary: #212529;
+    --text-secondary: #6B7280;
+    --border: #E5E7EB;
+
+    /* ========== 3. CORES DE DESTAQUE ========== */
+    --accent-blue: #0066FF;
+    --accent-green: #27C93F;
+    --accent-yellow: #E6A100;
+    --accent-purple: #8B2EF0;
+
+    /* ========== 4. FUNDOS CLAROS ========== */
+    --bg-blue-light: #E8F1FF;
+    --bg-green-light: #E6F9EF;
+    --bg-yellow-light: #FFF8E7;
+    --bg-purple-light: #F3E8FF;
+
+    /* ========== 5. SINTAXE (CÓDIGO) ========== */
+    --syntax-keyword: #0066FF;
+    --syntax-string: #27C93F;
+    --syntax-function: #E6A100;
+    --syntax-symbol: #D4A017;
+    --syntax-comment: #8B8B8B;
+
+    /* ========== 6. TAGS ========== */
+    --tag-html-bg: #FFF0E6;
+    --tag-html-text: #E65100;
+
+    /* ========== 7. LAYOUT ========== */
+    --container-max: 1250px;
+    --container-wide: 1150px;
+    --navbar-height: 75px;
+
+    /* ========== 8. BORDAS & SOMBRAS ========== */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/*Aviso -BLOQUEIO MOBILE TEMPORÁRIO- Aviso*/
 .mobile-aviso {
     display: none;
 }
-
 /* Em telas pequenas, visual para mostrar aviso - indicando que mobile está em construção */
 @media (max-width: 768px) {
     .mobile-aviso {
@@ -21,7 +76,6 @@
         text-align: center;
         padding: 20px;
     }
-
 /*Visual para o AVISO PRINCIPAL */
     .mobile-aviso-conteudo h1 {
         font-size: 28px;
@@ -46,44 +100,86 @@
         display: none !important;
     }
 }
-/*FIM Página temporária para Mobile FIM*/
+/*Aviso -BLOQUEIO MOBILE TEMPORÁRIO- Aviso*/
+
+/*Codes de sintaxe simulando código*/
+.syntax-keyword {color: var(--syntax-keyword)}
+.syntax-string {color: var(--syntax-string)}
+.syntax-function {color: var(--syntax-function)}
+.syntax-symbol {color: var(--syntax-symbol)}
+.syntax-comment {color: var(--syntax-comment);}
 
 
+/* ========== UTILITIES ========== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:root {
-    --primary: #0D6EFD;
-    --primary-hover: #0B5ED7;
-
-    --background: #fcfefe;
-    --background2: #fefefe;
-
-    --text-primary: #212529;
-    --text-secondary: #6C757D;
-
-    --border: #DEE2E6;
+    gap: 8px;
+    height: 45px;
+    padding: 0 25px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
 }
-    /*cores gerais para textos simulando código*/
-.texto-azul { color: #0066FF; }        /* Palavras-chave */
-.texto-verde { color: #27C93F; }       /* Crases */
-.texto-amarelo { color: #E6A100; }     /* Nomes de função */
-.texto-mostarda { color: #D4A017; }    /* $ e ; e operadores */
-.texto-cinza { color: #8B8B8B; }       /* Comentários */
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+}
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+}
+.btn-outline:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+}
+.btn-outline-light {
+    background: var(--background);
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+}
+.btn-outline-light:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+}
+.card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
+}
+
+.text-highlight {
+    color: var(--primary);
+    font-weight: 700;
+}
+.container {
+    max-width: var(--container-max);
+    height: 100%;    
+                     
+    margin: 0 auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
 /* reset */
 * {
     margin: 0;
@@ -102,949 +198,604 @@ html{
 }
 
 body {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     background: var(--background);
-    font-weight: 500;  
     color: var(--text-primary);
 }
 
-/* Início Navbar ---------- Início Navbar */
+
+/* ========== NAVBAR ========== */
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    height: 75px;
-    align-items: center;
-
-    background: #fff; /* importante */
+    font-size: var(--font-size-navbar);
+    background: var(--surface);       /* Use --surface em vez de --background */
     border-bottom: 1px solid var(--border);
-
-    font-size: 15px;
 }
 
-.container {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 0 50px;
 
-    display: flex;
-    align-items: center ;
-    justify-content: space-between;
-}
 
-/* links */
-.mid-menu a {
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 500;
-
-    display: flex;
-    align-items: center;
-    height: 75px;
-}
-/* logo start ------------- logo start */
-/*div da logo */
+/*Configuração da logo BHDTOOLS*/
 .logo {
     display: flex;
-    justify-self: start;
     align-items: center;
-}
-/*texto da Logo */
-.logo a {
+
     text-decoration: none;
+
     font-weight: 700;
-    font-size: 25px;
-    word-spacing: -15px;  
+    font-size: var(--font-size-xl);
     letter-spacing: -2px;
+}
+.logo-primary {color: var(--accent-blue)}
+.logo-secondary {color: var(--text-primary)}
 
-}
-/*Cor para BHD da logo */
-.logo-primary {
-    color: var(--primary);
-}
-/*Cor para Tools da logo */
-.logo-secondary {
-    color: var(--text-primary);
-}
-/* fim logo ------------- fim logo */
-
-/* listas */
+/*Configuração geral Menu de Navegação*/
 .menu{
     display: flex;
+    align-items: center;
     list-style: none;
-    gap: 20px;
-    list-style: none;
+
+    gap: 20px; 
 }
-/*Espaço das opções centrais do menu*/
-.mid-menu-inicio{
+
+/*Botão Início - Navegação Links*/
+.btn-inicio {
     display: flex;
     align-items: center;
-}
-/*Hover das opções centrais do menu*/
-.menu > .mid-menu > a:hover {
-    color: var(--primary);
-}
-/*Visual para o botão do "Início"*/
-.btn-inicio {
-    text-decoration: none;
+
+    padding: 8px 16px;
+
     background: var(--primary);
     color: #fff;
 
-    padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: var(--font-size-navbar);
 
+    text-decoration: none;
+    transition: 0.2s;
+    height: auto;
+}
+.btn-inicio:hover {
+    background: var(--primary-hover);
+}
+
+/*Navegação Links*/
+.menu-link {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    
+    font-size: var(--font-size-navbar);
+    color: var(--text-primary);
+    font-weight: 500;
 
-    height: auto;
-    font-weight: 600    ;
-
-    transition: 0.2s;
+    height: var(--navbar-height);
+    transition: color 0.2s;
 }
-/*Hover visual para o botão do "Início"*/
-.btn-inicio:hover {
-    background-color: var(--primary-hover);
-    color: #fff;
-    transition: 0.2s;
+.menu-link:hover { color: var(--primary); }
 
-}
-/*Configuração para os ícones da navbar à direita*/
+/* Socials */
 .socials {
     display: flex;
     align-items: center;
-    gap: 15px;
     list-style: none;
+    gap: 15px;
 }
-/* Fim Navbar ---------- Fim, Navbar */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* começo do hero --------------- começo do hero */
-.hero-container{
-    width: 1250px;
-    margin: 45px auto;
-    padding: 0 50px;
-
+.socials a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+.socials img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+/* Ajuste específico para o WhatsApp PNG */
+.socials li:last-child img {
+    width: 23px;
+    height: 23px;
+}
+/* ========== NAVBAR ========== */
+
+
+
+/* ========== HERO ========== */
+.hero {
+    max-width: var(--container-max);
+    margin: 45px auto;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
     gap: 20px;
 }
 
-.hero-1,
-.hero-2 {
+.hero-content,
+.hero-code {
     flex: 1;
-    height: 300px;
+    min-height: 300px;
 }
 
-/*Começo da div1 --------------- Começo da div1 */
-.hero-1 {
+.hero-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    
-
 }
 
-/*Título do primeiro bloco*/
-.hero1-title h1 {
-    font-size: 36px;
-    font-weight: 700;
-    
+.hero-heading {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+
     color: var(--text-primary);
     line-height: 1.2;
-    margin-bottom: 4px;
 }
-/*Parte azul do título do primeiro bloco*/
-.hero1-h1-texto-azul {
-    color: var(--primary);
-    font-weight: 700;
-    line-height: 1.2;
-}
-/*subtítulo do primeiro bloco*/
-.hero1-subtitle {
-    max-width: 450px; 
+
+.hero-text {
+    max-width: 450px;
 
     color: var(--text-secondary);
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     font-weight: 500;
     line-height: 1.6;
 }
-/*margem do parágrafo do subtítulo do primeiro bloco*/
-.hero1-subtitle p {
-    margin-bottom: 4px;
-}
-/*dois botões do primeiro bloco*/
-.hero1-botoes {
+
+.hero-actions {
     display: flex;
+
     gap: 25px;
     margin-top: 8px;
 }
-/*botão azul de projetos*/
-.btn-projetos {
-    display: flex;
-    height: 45px;
-    align-items: center;
-    gap: 8px;
 
-    background: var(--primary);
-    color: #fff;
+/* ========== HERO CODE ========== */
+.hero-code {
+    padding: 8px;
 
-    padding: 10px 25px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: 0.2s;
-}
-/*hover do botão azul de projetos*/
-.btn-projetos:hover {
-    background: var(--primary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
-}
-/*botão github*/
-.btn-github {
-    display: flex;
-    height: 45px;
-    align-items: center;
-    gap: 8px;
-
-
-    background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--border);
-    border-radius: 8px;
-
-    padding: 10px 30px;
-
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.2s;
-}
-/*hover do botão do github*/
-.btn-github:hover {
-    border-color: var(--text-primary);
-    transform: translateY(-1px);
-}
-/*Fim da div1 --------------- Fim da div1 */
-
-/*Começo da div2 --------------- Começo da div2 */
-.hero-2 {
-    background-color: var(--background2);
-    border: solid var(--border) 2px;
-    border-radius: 8px;
-
-    font-size: 15px;
+    font-size: var(--font-size-md);
     font-weight: 500;
-    line-height: 1.2;
-
-    letter-spacing: 1.5px; 
-
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    line-height: 2.0;
+    letter-spacing: 1.5px;
 }
-/*Configuração de display das bolinhas*/
-.hero2-mac-icons {
+
+.code-header {
     display: flex;
     gap: 8px;
     padding: 12px 16px;
 }
-/*dimenções das três bolinhas*/
-.mac-dot {
+
+.code-dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
 }
+.code-dot.red    { background: #FF5F56; }
+.code-dot.yellow { background: #FFBD2E; }
+.code-dot.green  { background: #27C93F; }
 
-/*Cores das bolinhas coloridas MacOS*/
-.mac-dot.red { background: #FF5F56; }
-.mac-dot.yellow { background: #FFBD2E; }
-.mac-dot.green { background: #27C93F; }
-
-/*Configuração da simulação de código no 2° quadrante do primeiro banner*/
-.hero2-codigo,
-.hero2-codigo-funcao,
-.hero2-codigo-comentario
-{
-    display: flex;
-    flex-direction: column;
-
-    gap: 8px;
-    padding: 12px 16px;
+.code-block {
+    padding: 8px 16px;
 }
-/*Simulação do comentário no ''código''*/
-.hero2-codigo-comentario {
+
+.code-comment {
     margin-top: 8px;
+    margin-bottom: 8px;
 }
-/*Fim da div2 --------------- Fim da div2 */
-/* fim do hero --------------- fim do hero */
+
+/* ========== HERO ========== */
 
 
 
 
 
 
-/*Começo do wide banner --------------- Começo do wide banner */
-.wide-banner{
-    width: 1150px;
-    height: 120px;
+/* ========== BANNER ESTATISTICAS ========== */
+.stats-banner{
+   max-width: var(--container-wide);
     margin: 45px auto;
     padding: 0 50px;
-
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
+    height: 120px;
 
-    border: solid var(--border) 1px;  /* Borda cinza temporária */
-    border-radius: 8px; 
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
 }
-/*Alinhamento da wide bar + bordas -------------- Alinhamento da wide bar + bordas*/
-.wb-projetos,
-.wb-funcionais,
-.wb-tecnologias,
-.wb-foco {
+.stats-item {
     display: flex;
+    align-items: center;
     flex: 1;
-    align-items: center;
+
     gap: 15px;
-
     padding: 0 20px;
-
-    /* Divisória entre cards */
+    
     border-right: 1px solid var(--border);
-
 }
-/* Remove a divisória do último card */
-.wb-foco {
-    border-right: none;
+.stats-item:last-child {
+    border-right: none; /*remover ultima borda*/
 }
-/* Card 1 - Projetos (Azul) */
-.wb-icone {
+.stats-icon{
     display: flex;
     align-items: center;
     justify-content: center;
     
     width: 60px;
     height: 60px;
-    border-radius: 10px;
-    flex-shrink: 0;  /* Não diminui o ícone */
+
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
 }
-/*Inforação azul dentro do quadrante da widebar*/
-.wb-conteudo span {
+.stats-info span{
     font-size: 24px;
     font-weight: 700;
-    margin-top: 5px;
 }
-/*Texto padrão dentro do quadrante da widebar*/
-.wb-conteudo p{
-    margin-top: 5px;
+.stats-info p{
+    font-size: var(--font-size-md);
     color: var(--text-secondary);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.2;
+
+}
+.stats-number {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
 }
 
 
-/* Cores de fundo dos ícones */
-.wb-projetos .wb-icone { background: #E8F1FF; }
-.wb-funcionais .wb-icone { background: #E6F9EF; }
-.wb-tecnologias .wb-icone { background: #FFF8E7; }
-.wb-foco .wb-icone { background: #F3E8FF; }
+/*Cor dos fundos dos ícones do banner de estatísticas*/
+.bg-blue-light {background-color: var(--bg-blue-light)}
+.bg-green-light {background-color: var(--bg-green-light)}
+.bg-purple-light {background-color: var(--bg-purple-light)}
+.bg-yellow-light {background-color: var(--bg-yellow-light)}
 
-/* Cores dos SVGs */
-.wb-projetos .wb-icone svg { stroke: #0066FF; }
-.wb-funcionais .wb-icone svg { fill: #27C93F; }
-.wb-tecnologias .wb-icone svg { stroke: #E6A100; }
-.wb-foco .wb-icone svg { fill: #8B2EF0; stroke: #8B2EF0; }
-/*Fim do wide banner --------------- Fim do wide banner */
+/*Cor da span do banner de estatísticas*/
+.text-accent-blue {color: var(--accent-blue)}
 
 
+/*Seção container com texto apresentando destaques*/
+.section-header{
+    max-width: var(--container-wide);
 
-
-
-
-
-/*Começo container com texto apresentando destaques*/
-/*Container principal*/
-.wide-container{
-    width: 1150px;
     margin: 45px auto;
     padding: 0 50px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
-
-/*Div central do container de destaques - Contém título/subtítulo*/
-.wc-text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 5px;
-} 
-
-/*Título do container de destaques*/
-.wc-text h2{
-    font-size: 25px;
+.section-title{
+    font-size: var(--font-size-xl);
     font-weight: 700;
 
-    line-height: 1.2;
-    margin-bottom: 4px;
-
     color: var(--text-primary);
+
+    margin-bottom: 10px;
 }
-/*Subtítulo do container de destaques*/
-.wc-text h3{
-    font-size: 18px;
+.section-subtitle{
+    font-size: var(--font-size-lg);
     font-weight: 500;
-    line-height: 1.6;
 
     color: var(--text-secondary);
 }
-/*Fim container com texto apresentando destaques*/
+/* ========== BANNER ESTATISTICAS ========== */
 
 
 
+/* ========== TOOLS GRID ========== */
+.tools-grid {
+    max-width: var(--container-wide);
 
-
-
-
-
-
-
-
-
-
-/*Começo bloco demonstrando as ferramentas */
-
-/*Container que acomoda todos as divs de ferramentas*/
-.bloco-ferramentas {
-    display: flex;
-    width: 1150px;
-    height: auto;
     margin: 45px auto;
-    padding: 0;
+    display: flex;
+
     gap: 20px;
 }
 
-/*Todas as divs com ferramentas*/
-.ferramenta{
-    flex-direction: row;
+.tool-card {
     flex: 1;
 
-
-    border: solid var(--border) 1px;  /* Borda cinza temporária */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; 
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    background: var(--surface);
 }
 
-/*Parte de CIMA do quadrado de ferramentas (ícone+título+subtitulo)*/
-.ferramenta-top{
+.tool-card {
     display: flex;
-    justify-content: space-between;
-
-    margin: 10px;
-    gap: 20px;
-
-
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-
+    flex-direction: column;
+    padding: 0;
 }
 
 
-/*Background claro do SVG de cada ferramenta*/
-.ico-tool-blue svg { background: #E8F1FF; }
-.ico-tool-green svg{ background: #E6F9EF; }
-.ico-tool-orange svg{ background: #FFF8E7; }
+.tool-header {
+    display: flex;
+    align-items: flex-start;
 
-/*Configuração do espaço ocupado do ícone das ferramentas*/
-.ico-tool-blue svg, 
-.ico-tool-green svg,
-.ico-tool-orange svg
-{   
+    gap: 15px;
+    padding: 20px 20px 15px 20px;
+}
+
+.tool-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 75px;
     height: 75px;
 
-    padding: 10px;
-
-    border-radius: 10px;
-    flex-shrink: 0;  
-
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
 }
 
-/*Texto interno primário das divs das ferramentas*/
-.texto-tool{
-    display: flex;
-    flex-direction: column;
-    padding-top: 2px;
-    padding-bottom: 2px;
-
-    align-items: start;
-}
-
-/*Texto interno secundário das divs das ferramentas*/
-.texto-tool p{
-    color: var(--text-secondary);
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-
-/*Parte de BAIXO do quadrado de ferramentas (botões, tags, tecnologias)*/
-.ferramenta-bot{
-    display: flex;
-    flex-direction: column;
-    align-content: start;
-
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-/*Botão to ''abrir ferramenta'' */
-.btn-abrir-ferramenta {
-    display: flex;
+.tool-icon svg {
+    width: 40px;
     height: 40px;
-    width: 60%;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+}
 
+.tool-info {
+    padding-top: 2px;
+}
 
-    background: var(--primary);
-    color: #fff;
+.tool-info h3 {
+    font-size: var(--font-size-md);
+    font-weight: 700;
 
-    border-radius: 8px;
+    color: var(--text-primary);
+
+    margin-bottom: 6px;
+}
+
+.tool-info p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
     font-weight: 500;
-    font-size: 14px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: 0.2s;
+    line-height: 1.4;
 }
 
-/*Hover to ''abrir ferramenta'' */
-.btn-abrir-ferramenta:hover{
-    background: var(--primary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+/* Botão Abrir Ferramenta */
+.tool-action {
+    margin: 0 20px;
+    width: auto;       
 }
 
-
-/*Botões das ferramentas "ver html/css/javascript" */
-.ver-codigo{
+/* Links Ver HTML/CSS/JS */
+.tool-links {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    margin: 10px;
-    gap: 2px;
-
-    margin-left: 20px;
-    margin-right: 20px;
+    gap: 7px;
+    margin: 10px 20px;
 }
+.tool-links .btn-sm {
+    flex: 1;
 
-/*Botões VER "CSS/HTML/JAVASCRIPT" */
-.btn-ver-codigo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    white-space: nowrap;  
 
-    height: 30px;
-    padding: 15px 15px;
+    height: 35px;
+    padding: 0 12px;
 
-    background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--border);
-    border-radius: 8px;
-
+    font-size: var(--font-size-sm);
     font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.2s;
 }
-
-.btn-ver-codigo:hover {
-    border-color: var(--text-primary);
-    transform: translateY(-1px);
+.tool-links a{
+    text-align: center;
 }
+.btn-sm {
+    height: 32px;
 
-
-/*Divisão do botão isolado "GITHUB" em Ferramentas */
-.ver-github{
+    padding: 0 12px;
+    
+    font-size: var(--font-size-xs);
+}
+/* Botão GitHub */
+.tool-github {
+    width: auto;            
+    margin: 0 20px;          
+}
+/* Tags */
+.tool-tags {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-/*Estilo do botão GitHub em Ferramenta */
-.btn-ver-github{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 5px;
-
-    height: 30px;
-    padding: 15px 15px;
-
-    background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--border);
-    border-radius: 8px;
-
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-/*Hover do botão GitHub em Ferramenta */
-.btn-ver-github:hover {
-    border-color: var(--text-primary);
-    transform: translateY(-1px);
-}
-
-.tag-tecnologias {
-    display: flex;
-    align-items: center;
-
-    margin: 20px;
-    padding-bottom: 10px;
     gap: 10px;
+    margin: 15px 20px 20px 20px;
 }
-
-.tag-html,
-.tag-css,
-.tag-js
- {
+.tag {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    height: 30px;
 
     padding: 10px 15px;
-    border-radius: 5px; 
-    height: 30px;
-
-    font-size: 14px;
+    border-radius: 5px;
+    
+    font-size: var(--font-size-sm);
     font-weight: 600;
+    
     white-space: nowrap;
 }
 
-/*COMEÇO Configuração de cores das tags de tencologia COMEÇO*/
-/* HTML - Laranja */
-.tag-html {
-    background: #FFF0E6;     
-    color: #E65100;          
-}
-/* CSS - Azul */
-.tag-css {
-    background: #E8F1FF;     
-    color: #0066FF;          
-}
-/* JavaScript - Roxo */
-.tag-js {
-    background: #F3E8FF;      
-    color: #8B2EF0;           
-}
-/*FIM Configuração de cores das tags de tencologia FIM*/
-/*Fim bloco demonstrando as ferramentas */
+.tag-html { background: var(--tag-html-bg); color: var(--tag-html-text); }
+.tag-css  { background: var(--bg-blue-light); color: var(--accent-blue); }
+.tag-js   { background: var(--bg-purple-light); color: var(--accent-purple); }
+/* ========== TOOLS GRID ========== */
 
 
 
 
 
-/*COMEÇO Container com botão 'VER PROJETOS' COMEÇO */
-.btn-ver-projetos {
-    display: flex;
-    height: 45px;
-    align-items: center;
-    gap: 8px;
-
-
+/* ==========(Ver projetos) SEÇÃO + BOTÃO (Ver projetos)========== */
+.btn-outline-primary {
     background: transparent;
+
     color: var(--primary);
     border: 2px solid var(--primary);
-    border-radius: 8px;
-
-    padding: 10px 30px;
-
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.2s;
 }
-/*hover do botão do github*/
-.btn-ver-projetos:hover {
+
+.btn-outline-primary:hover {
     border-color: var(--primary-hover);
+    color: var(--primary-hover);
     transform: translateY(-1px);
 }
 
+.btn-project {
+    margin-top: 10px;
+}
+/* ==========(Ver projetos) SEÇÃO + BOTÃO (Ver projetos)========== */
 
 
-
-/*COMEÇO container com SOBRE+TECNOLGOIAS USADAS (2 BLOCOS) COMEÇO*/
-/*Container principal*/
-.hero-container2{
-    width: 1250px;
+/* ========== ABOUT SECTION ========== */
+.about-section {
+    max-width: var(--container-max);
     margin: 45px auto;
     padding: 0 50px;
-
     display: flex;
-    align-items: stretch;
     gap: 20px;
+    align-items: stretch;
 }
 
-/*Configuração dos dois blocos*/
-.hero1-block, .hero2-block{
-    display: flex;
-    flex-direction: column;
+.about-card,
+.tech-card {
     flex: 1;
-    height: auto; /*temporário*/
-
-    padding: 30px 30px 20px 30px;
-    gap: 10px;
-
-    border: solid var(--border) 1px;  /* Borda cinza temporária */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; 
+    padding: 30px;
 }
 
-/*Configuração de paráfrafo do bloco 1 e 2*/
-.hero1-block p,
-.hero2-block p{
-    margin-bottom: 10px;
-
-    color: var(--text-primary);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.2;
+.tech-card {
+    display: flex;
+    flex-direction: column;      
 }
 
-/*Título SAIBA MAIS SOBRE*/
-.hero1-titulo h3 {
+
+.about-title {
     display: flex;
     align-items: center;
-    gap: 15px;  
 
-    font-size: 20px;
+    font-size: var(--font-size-lg);
     font-weight: 600;
-    line-height: 1.6;
-
     color: var(--text-primary);
-}
 
-
-/*Botão SAIBA MAIS SOBRE*/
-.btn-saiba-sobre{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 45px;
-    gap: 8px;
-    width: 50%;
-
-    background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    border-radius: 8px;
-
-    padding: 10px 30px;
-
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-/*hover do botão do github*/
-.btn-saiba-sobre:hover {
-    border-color: var(--primary-hover);
-    transform: translateY(-1px);
-}
-/*Fim do bloco1 --------------- Fim do bloco1*/
-
-
-/*COMEÇO do bloco2 --------------- COMEÇO do bloco2*/
-/*Configuração da grid do bloco 2*/
-.hero2-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 colunas iguais */
     gap: 15px;
-    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-/*Configurações dos itens individuais de dentro da grid*/
-.hero2-item-grid{
+.about-text p {
+    color: var(--text-primary);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.about-btn {
+    margin-top: 15px;
+    width: 50%;
+}
+
+/* Tecnologias */
+.tech-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    margin-top: auto;              
+    margin-bottom: auto;           
+}
+
+.tech-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
     gap: 8px;
-    padding: 5px 5px;
-
-    color: var(--text-primary);
+    padding: 5px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
 }
 
-/*Configuração das imagens(ícones das tecnologias) da grid*/
-.ico-grid img{
+.tech-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-icon img {
     width: 35px;
     height: 35px;
     object-fit: contain;
-    display: block;
 }
+/* ========== ABOUT SECTION ========== */
 
-/*Configuração de alinhamento das imagens(ícones das tecnologias) da grid*/
-.ico-grid{
+
+
+
+/* ========== CONTACT BANNER ========== */
+.contact-banner {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-}
-/*FIM container com SOBRE+TECNOLGOIAS USADAS (2 BLOCOS) FIM*/
-
-
-
-
-/*COMEÇO container com as informações de contato (ÍCONE+TEXTO+BOTÕES) COMEÇO*/
-.wide-container2{
-    width: 1150px;
-    height: 140px;
+    max-width: var(--container-wide);
 
     margin: 45px auto;
-    padding: 0 50px;
+    padding: 30px 50px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: 50px;
 
-    border: solid var(--border) 1px;  /* Borda cinza temporária */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; 
-
-    background-color: #E8F1FF;
+    background: var(--bg-blue-light);
 }
 
-.icone-contato {
+.contact-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
+
+
+    width: 60px;
+    height: 60px;
+    
+
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
 }
 
-.icone-contato img {
+.contact-icon img {
     width: 80px;
     height: 80px;
+
     object-fit: contain;
 }
 
-.botoes-contato{
+.contact-text {
+    flex: 1;
+}
+
+.contact-text h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.contact-text p {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.contact-actions {
     display: flex;
-    flex-direction: row;
     gap: 10px;
 }
-
-.btn-contato {
-    display: flex;
-    height: 45px;
-    align-items: center;
-    gap: 8px;
-
-
-    background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--border);
-    background-color: var(--background);
-    border-radius: 8px;
-
-    padding: 20px 25px;
-
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.2s;
-}
-/*hover do botão do github*/
-.btn-contato:hover {
-    border-color: var(--text-primary);
-    transform: translateY(-1px);
-}
-
-
-.texto-contato{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.texto-contato h2{
-    font-size: 25px;
-    font-weight: 700;
-
-    line-height: 1.2;
-    margin-bottom: 4px;
-
-    color: var(--text-primary);
-}
-
-.texto-contato h3{
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.6;
-
-    color: var(--text-primary);
-}
-/*FIM container com as informações de contato (ÍCONE+TEXTO+BOTÕES) FIM*/
+/* ========== CONTACT BANNER ========== */
 
 
 
 
 
-
-/*COMEÇO rodapé COMEÇO*/
+/* ========== FOOTER ========== */
 .footer{
-    width: 1150px;
+    max-width: var(--container-wide);
     margin: 45px auto;
     padding: 0 50px;
 
@@ -1053,17 +804,15 @@ body {
     justify-content: center;
 
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: var(--font-size-sm)
 }
 
 .footer h3{
-        font-size: 18px;
     font-weight: 500;
-    line-height: 1.6;
-
+    font-size: var(--font-size-md); 
     color: var(--text-primary);
 }
-/*FIM rodapé FIM*/
+/* ========== FOOTER ========== */
 
 
 
