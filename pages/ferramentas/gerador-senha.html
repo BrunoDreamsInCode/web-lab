@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/gerador-senha.css">
+
     <link rel="icon" type="image/svg+xml" href="../../assets/favicon/BHD-Tools SVG.svg">
     <title>BHD Tools</title>
 </head>
@@ -105,10 +106,186 @@
         </div>
     </section>
 
-    <!-- Área da ferramenta -->
-    <section class="tool-area card">
-        <h1>🚧 Em Breve</h1>
-    </section>
+
+<!-- Área da ferramenta -->
+<section class="tool-area card">
+
+    <!-- ===== COLUNA ESQUERDA - CONFIGURAÇÕES ===== -->
+    <div class="config-col">
+
+        <h2>Gerador de Senhas</h2>
+
+        <!-- Tamanho da senha -->
+        <fieldset class="option-group">
+
+            <h3 class="section-title">Tamanho da senha</h3>
+
+            <div class="option-header">
+                <label for="length">Quantidade de caracteres</label>
+                <span id="lengthValue">16</span>
+            </div>
+
+            <input
+                type="range"
+                id="length"
+                min="4"
+                max="64"
+                value="16">
+
+        </fieldset>
+
+        <!-- Caracteres -->
+        <fieldset class="option-group">
+
+            <h3 class="section-title">Incluir caracteres</h3>
+
+            <label>
+                <input type="checkbox" id="uppercase" checked>
+                Letras maiúsculas (A-Z)
+            </label>
+
+            <label>
+                <input type="checkbox" id="lowercase" checked>
+                Letras minúsculas (a-z)
+            </label>
+
+            <label>
+                <input type="checkbox" id="numbers" checked>
+                Números (0-9)
+            </label>
+
+            <label>
+                <input type="checkbox" id="symbols">
+                Símbolos (! @ # $ % & * ...)
+            </label>
+
+        </fieldset>
+
+        <!-- Opções extras -->
+        <fieldset class="option-group">
+
+             <h3 class="section-title">Opções Adicionais</h3>
+
+            <label>
+                <input type="checkbox" id="avoidSimilar">
+                Evitar caracteres semelhantes (0, O, o, I, l, 1)
+            </label>
+
+            <label>
+                <input type="checkbox" id="guaranteeTypes" checked>
+                Garantir pelo menos um de cada tipo
+            </label>
+
+        </fieldset>
+
+    </div>
+    <!-- ===== FIM COLUNA ESQUERDA ===== -->
+
+
+    <!-- ===== COLUNA DIREITA - OUTPUT ===== -->
+    <div class="output-col">
+
+        <h3 class="section-title">Senha gerada</h3>
+
+        <!-- Input + Botão Copiar -->
+        <div class="password-box">
+
+            <input
+                type="text"
+                id="password"
+                placeholder="Clique em 'Gerar senha'"
+                readonly
+                autocomplete="off"
+                spellcheck="false">
+
+            <button
+                id="copyBtn"
+                type="button">
+                Copiar
+            </button>
+
+        </div>
+
+        <!-- Força da senha -->
+        <div class="strength-container">
+
+            <div class="strength-info">
+                <span>Força da senha</span>
+                <span id="strengthText">—</span>
+            </div>
+
+            <div class="strength-bar">
+                <div
+                    class="strength-fill"
+                    id="strengthFill">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mensagem divertida -->
+        <div
+            id="funMessage"
+            class="fun-message">
+
+            🔒 Gere uma senha para começar
+
+        </div>
+
+        <!-- Botões -->
+        <div class="buttons">
+
+            <button
+                id="generateBtn"
+                type="button">
+                Gerar senha
+            </button>
+
+            <button
+                id="resetBtn"
+                type="button">
+                Restaurar padrão
+            </button>
+
+        </div>
+
+        <!-- Dicas -->
+        <h3 class="section-title">Dicas de segurança</h3>
+
+        <ul class="security-tips">
+
+            <li>
+                <svg viewBox="0 0 1920 1920" aria-hidden="true">
+                    <path d="M1827.701 303.065 698.835 1431.801 92.299 825.266 0 917.564 698.835 1616.4 1919.869 395.234z"/>
+                </svg>
+
+                <span>Use senhas diferentes para cada conta.</span>
+            </li>
+
+            <li>
+                <svg viewBox="0 0 1920 1920" aria-hidden="true">
+                    <path d="M1827.701 303.065 698.835 1431.801 92.299 825.266 0 917.564 698.835 1616.4 1919.869 395.234z"/>
+                </svg>
+
+                <span>Ative a autenticação em dois fatores sempre que possível.</span>
+            </li>
+
+            <li>
+                <svg viewBox="0 0 1920 1920" aria-hidden="true">
+                    <path d="M1827.701 303.065 698.835 1431.801 92.299 825.266 0 917.564 698.835 1616.4 1919.869 395.234z"/>
+                </svg>
+
+                <span>Não compartilhe suas senhas com ninguém.</span>
+            </li>
+
+        </ul>
+
+    </div>
+    <!-- ===== FIM COLUNA DIREITA ===== -->
+
+</section>
+
+
 
     <!-- Código-fonte -->
     <section class="tool-code card">
@@ -198,8 +375,6 @@
 
 </div>
 
-
-
     <!--Container de sugestão-->
     <section class="contact-banner card">
         
@@ -228,6 +403,8 @@
 <footer class="footer">
     <h3>© 2026 Bruno Henrique Domingos. Todos os direitos reservados.</h3>
 </footer>
+
+    <script src="../../assets/js/gerador-senhas.js"></script>
 
 </body>
 </html>

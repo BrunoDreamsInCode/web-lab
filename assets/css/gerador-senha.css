@@ -522,6 +522,393 @@ body {
 }
 
 
+/* ========== TOOL AREA ========== */
+.todo-conteudo-site {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 80px auto;
+    padding: 0 32px;
+}
+
+/* Hero */
+.tool-hero {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.tool-hero-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    flex-shrink: 0;
+}
+
+.tool-hero-icon svg {
+    width: 100px;
+    height: 100px;
+}
+
+.tool-hero-content {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 15px;
+}
+
+.tag-tipo {
+    display: inline-flex;
+    width: fit-content;
+    padding: 2px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: var(--font-size-md);
+    color: var(--primary);
+}
+
+.tool-features {
+    display: flex;
+    gap: 25px;
+    margin-top: auto;
+}
+
+.tool-feature {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tool-feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.tool-feature-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* ========== GERADOR DE SENHAS - LAYOUT 2 COLUNAS ========== */
+.tool-area {
+    display: grid;
+    align-items: start;             
+    position: relative;
+
+    grid-template-columns: 1fr 1fr;  
+    gap: 40px;                       
+    padding: 40px;
+    min-height: 550px;
+    margin-bottom: 80px;
+
+
+}
+
+.tool-area::after {
+    content: '';
+    position: absolute;
+    
+    left: 50%;
+    top: 10%;
+    bottom: 10%;
+    width: 1px;
+
+    opacity: 0.4;
+}
+
+/* ===== COLUNA ESQUERDA - CONFIGURAÇÕES ===== */
+.config-col {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.config-col h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+/* Option Groups */
+.option-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+        border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option-header label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.option-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    gap: 10px;
+
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.option-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.option-group input[type="range"] {
+    width: 100%;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+#lengthValue {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: var(--font-size-lg);
+}
+
+/* ===== COLUNA DIREITA - OUTPUT ===== */
+.output-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 8px; /* Alinha com o título da esquerda */
+}
+
+.section-title{
+    margin: 0 0 12px 0;
+
+    font-size: var(--font-size-md);
+    font-weight: 600;
+
+    color: var(--text-primary);
+}
+
+/* Password Box */
+.password-box {
+    display: flex;
+    gap: 12px;
+}
+
+.password-box input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-lg);
+    font-family: monospace;
+    background: var(--background);
+    color: var(--text-primary);
+    transition: border-color 0.2s;
+    min-height: 55px;
+}
+
+.password-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.password-box button {
+    padding: 0 24px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+    min-height: 55px;
+}
+
+.password-box button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+/* Strength */
+.strength-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.strength-info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+}
+
+.strength-info span:first-child {
+    color: var(--text-secondary);
+}
+
+.strength-info span:last-child {
+    font-weight: 700;
+}
+
+.strength-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    transition: width 0.3s, background 0.3s;
+}
+
+/* Strength Colors */
+.strength-fill.weak { 
+    background: #FF4444; 
+    width: 25%; 
+}
+.strength-fill.fair { 
+    background: #FFA500; 
+    width: 50%; 
+}
+.strength-fill.good { 
+    background: #FFD700; 
+    width: 75%; 
+}
+.strength-fill.strong { 
+    background: var(--accent-green); 
+    width: 100%; 
+}
+
+/* Entropy & Crack Time */
+.entropy, .crack-time {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.entropy strong, .crack-time strong {
+    color: var(--text-primary);
+}
+
+/* Fun Message */
+.fun-message {
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-yellow-light);
+    color: var(--accent-yellow);
+    font-weight: 500;
+    text-align: center;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 14px 24px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#generateBtn {
+    background: var(--primary);
+    color: #fff;
+}
+
+#generateBtn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+#resetBtn {
+    background: var(--border);
+    color: var(--text-primary);
+}
+
+#resetBtn:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+}
+
+.security-tips{
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.security-tips li{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.security-tips svg{
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    fill: var(--primary);
+
+    margin-top: 3px;
+}
+
+
+
+/* ========== TOOL AREA ========== */
+
+
 
 /* ========== CONTACT BANNER ========== */
 .contact-banner {
@@ -594,6 +981,7 @@ body {
     gap: 10px;
 }
 /* ========== CONTACT BANNER ========== */
+
 
 
 
