@@ -1,25 +1,15 @@
-// ========== GERADOR DE SENHAS ==========
-document.addEventListener('DOMContentLoaded', () => {
-    // ===== ELEMENTOS DOM =====
-    const passwordInput = document.getElementById('password');
-    const generateBtn = document.getElementById('generateBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const lengthSlider = document.getElementById('length');
-    const lengthValue = document.getElementById('lengthValue');
-    const strengthFill = document.getElementById('strengthFill');
-    const strengthText = document.getElementById('strengthText');
-    const funMessage = document.getElementById('funMessage');
+// ========== GERADOR DE SENHAS - VERSÃO FINAL ==========
 
-    // Checkboxes
-    const uppercaseCheck = document.getElementById('uppercase');
-    const lowercaseCheck = document.getElementById('lowercase');
-    const numbersCheck = document.getElementById('numbers');
-    const symbolsCheck = document.getElementById('symbols');
-    const avoidSimilarCheck = document.getElementById('avoidSimilar');
-    const guaranteeTypesCheck = document.getElementById('guaranteeTypes');
+(function() {
+    'use strict';
 
     // ===== CONSTANTES =====
+    const CONFIG = {
+        MIN_LENGTH: 4,
+        MAX_LENGTH: 30,          // 🔥 LIMITE MÁXIMO = 30
+        DEFAULT_LENGTH: 16
+    };
+
     const CHARS = {
         uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
         lowercase: 'abcdefghijklmnopqrstuvwxyz',
@@ -29,101 +19,119 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const SIMILAR_CHARS = 'O0oIl1';
 
-    // ===== FUNÇÃO: Pegar caracteres disponíveis =====
+    const STRENGTH_MESSAGES = {
+        strong: ['🛡️ Senha fortíssima!', '🔒 Impenetrável!', '💪 Poderosa!', '🏦 Cofre seguro!'],
+        good: ['✅ Boa senha!', '🔐 Segura!', '👍 Confiável!'],
+        fair: ['📈 Pode melhorar', '⚖️ Média segurança', '🔧 Aumente os caracteres'],
+        weak: ['⚠️ Senha fraca!', '📏 Muito curta!', '🚨 Risco!']
+    };
+
+    // ===== EASTER EGG: Mensagens ultra seguras =====
+    const ULTRA_SECURE_MESSAGES = [
+        '🔥 MODO ULTRA SEGURO ATIVADO!',
+        '🦸‍♂️ Nem o Batman quebra essa!',
+        '🔐 Mais seguro que o cofre do Banco Central!',
+        '💀 Até o NSA teria trabalho com essa!',
+        '🚀 Essa senha foi para a NASA!',
+        '🛡️ Escudo impenetrável ativado!',
+        '⚡ 30 caracteres de pura segurança!',
+        '🏆 Você atingiu o nível máximo de segurança!',
+        '🔒 Lockdown total ativado!',
+        '💎 Senha nível diamante!',
+        '🎯 Alvo: segurança máxima!',
+        '🛸 Essa senha é de outro mundo!',
+        '🧠 Gênio da segurança!',
+        '🔥 Modo Deus da Segurança ativado!',
+        '🔐 Até o Edward Snowden aprovaria essa!',
+        '⚡ Over 9000 de segurança!',
+        '🦄 Senha lendária!',
+        '🏅 Nível máximo atingido!',
+        '💥 Poder absoluto da segurança!',
+        '🎆 Show de segurança!'
+    ];
+
+    // ===== DOM ELEMENTS =====
+    const DOM = {
+        password: document.getElementById('password'),
+        generateBtn: document.getElementById('generateBtn'),
+        copyBtn: document.getElementById('copyBtn'),
+        resetBtn: document.getElementById('resetBtn'),
+        lengthSlider: document.getElementById('length'),
+        lengthValue: document.getElementById('lengthValue'),
+        strengthFill: document.getElementById('strengthFill'),
+        strengthText: document.getElementById('strengthText'),
+        funMessage: document.getElementById('funMessage'),
+        uppercase: document.getElementById('uppercase'),
+        lowercase: document.getElementById('lowercase'),
+        numbers: document.getElementById('numbers'),
+        symbols: document.getElementById('symbols'),
+        avoidSimilar: document.getElementById('avoidSimilar'),
+        guaranteeTypes: document.getElementById('guaranteeTypes')
+    };
+
+    // ===== VALIDAÇÕES =====
+    function validateElements() {
+        const missing = Object.entries(DOM)
+            .filter(([key, element]) => !element)
+            .map(([key]) => key);
+
+        if (missing.length > 0) {
+            console.error('Elementos DOM não encontrados:', missing.join(', '));
+            return false;
+        }
+        return true;
+    }
+
+    // ===== FUNÇÕES DE CARACTERES =====
     function getAvailableChars() {
         let chars = '';
 
-        if (uppercaseCheck.checked) chars += CHARS.uppercase;
-        if (lowercaseCheck.checked) chars += CHARS.lowercase;
-        if (numbersCheck.checked) chars += CHARS.numbers;
-        if (symbolsCheck.checked) chars += CHARS.symbols;
+        if (DOM.uppercase.checked) chars += CHARS.uppercase;
+        if (DOM.lowercase.checked) chars += CHARS.lowercase;
+        if (DOM.numbers.checked) chars += CHARS.numbers;
+        if (DOM.symbols.checked) chars += CHARS.symbols;
 
-        // Evitar caracteres semelhantes
-        if (avoidSimilarCheck.checked) {
+        if (DOM.avoidSimilar.checked) {
             chars = chars.split('').filter(c => !SIMILAR_CHARS.includes(c)).join('');
         }
 
         return chars;
     }
 
-    // ===== FUNÇÃO: Pegar tipos ativos =====
     function getActiveTypes() {
         const types = [];
-        if (uppercaseCheck.checked) types.push(CHARS.uppercase);
-        if (lowercaseCheck.checked) types.push(CHARS.lowercase);
-        if (numbersCheck.checked) types.push(CHARS.numbers);
-        if (symbolsCheck.checked) types.push(CHARS.symbols);
+        if (DOM.uppercase.checked) types.push(CHARS.uppercase);
+        if (DOM.lowercase.checked) types.push(CHARS.lowercase);
+        if (DOM.numbers.checked) types.push(CHARS.numbers);
+        if (DOM.symbols.checked) types.push(CHARS.symbols);
         return types;
     }
 
-    // ===== FUNÇÃO: Verificar se está no modo "ultra seguro" =====
-    function isUltraSecureMode() {
-        const allTypesChecked = 
-            uppercaseCheck.checked &&
-            lowercaseCheck.checked &&
-            numbersCheck.checked &&
-            symbolsCheck.checked;
-
-        const length = parseInt(lengthSlider.value);
-        const isLong = length >= 40;
-        const avoidSimilar = avoidSimilarCheck.checked;
-        const guarantee = guaranteeTypesCheck.checked;
-
-        // Todas as opções mais seguras ativadas
-        return allTypesChecked && isLong && avoidSimilar && guarantee;
+    function hasAtLeastOneType() {
+        return DOM.uppercase.checked || 
+               DOM.lowercase.checked || 
+               DOM.numbers.checked || 
+               DOM.symbols.checked;
     }
 
-    function getFunnyUltraSecureMessage() {
-        const messages = [
-            'Nem mesmo o L poderia desvendar essa senha',
-            'Até o Batman teria dificuldade com essa',
-            'O Dumbledore aprovaria essa senha',
-            'Essa senha tem mais camadas que a matriz',
-            'O Sherlock Holmes ficaria confuso com isso',
-            'Até o Einstein precisaria de um tempo para decifrar',
-            'Essa senha é mais segura que o cofre do Gringotes',
-            'O Neo tentaria desviar dessa senha',
-            'Essa senha deixaria o Gandalf impressionado',
-            'Até o Rick Sanchez respeitaria essa senha',
-            'Essa senha é mais complexa que o enigma de Duna',
-            'O Tony Stark usaria essa senha no Jarvis',
-            'Essa senha tem mais código que o Matrix',
-            'Até o Q da MI6 aprovaria essa senha',
-            'O Batman colocaria essa senha no Batcomputador',
-            'Essa senha é mais forte que o Adamantium',
-            'O Professor Xavier teria orgulho dessa senha',
-            'Até o Deadpool levaria essa senha a sério',
-            'Essa senha é mais protegida que a Fortaleza da Solidão',
-            'O Aragorn juraria proteger essa senha',
-            'Essa senha é mais épica que Senhor dos Anéis',
-            'Até o Tyrion Lannister beberia por essa senha',
-            'Essa senha é mais inteligente que o Sherlock',
-            'O Doutor Strange veria 14 milhões de futuros e todos têm essa senha',
-            'Até o Goku precisaria de mais uma transformação para quebrar essa',
-            'Essa senha é mais secreta que a ordem dos Jedi',
-            'O Legolas enxergaria longe, mas não essa senha',
-            'Essa senha é mais difícil que o cubo mágico'
-        ];
-
-        return messages[Math.floor(Math.random() * messages.length)];
-    }
-
-    // ===== FUNÇÃO: Gerar senha =====
+    // ===== FUNÇÃO PRINCIPAL: GERAR SENHA =====
     function generatePassword() {
-        const length = parseInt(lengthSlider.value);
-        const chars = getAvailableChars();
-        const types = getActiveTypes();
-        const guarantee = guaranteeTypesCheck.checked;
-
-        // Verificar se há caracteres disponíveis
-        if (!chars) {
-            passwordInput.value = '⚠️ Selecione um tipo';
+        if (!hasAtLeastOneType()) {
+            DOM.password.value = '⚠️ Selecione um tipo';
             return '';
         }
 
+        const length = Math.min(
+            parseInt(DOM.lengthSlider.value) || CONFIG.DEFAULT_LENGTH,
+            CONFIG.MAX_LENGTH
+        );
+        
+        const chars = getAvailableChars();
+        const types = getActiveTypes();
+        const guarantee = DOM.guaranteeTypes.checked;
+
         let password = '';
 
-        // Garantir pelo menos um de cada tipo selecionado
         if (guarantee && types.length > 0) {
             for (const type of types) {
                 const typeChars = type.split('');
@@ -132,225 +140,302 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Preencher o restante da senha
         const charsArray = chars.split('');
         while (password.length < length) {
             const randomIndex = Math.floor(Math.random() * charsArray.length);
             password += charsArray[randomIndex];
         }
 
-        // Embaralhar a senha
-        password = password.split('').sort(() => Math.random() - 0.5).join('');
-
-        // Cortar se exceder o tamanho (por segurança)
-        if (password.length > length) {
-            password = password.substring(0, length);
-        }
+        password = password
+            .split('')
+            .sort(() => Math.random() - 0.5)
+            .join('')
+            .substring(0, length);
 
         return password;
     }
 
-    // ===== FUNÇÃO: Calcular força da senha =====
+    // ===== CÁLCULO DE FORÇA =====
     function calculateStrength(password) {
         if (!password) {
-            return {
-                entropy: 0,
-                strength: 'none',
-                strengthLabel: '—',
-                crackTime: '—'
-            };
+            return getEmptyStrength();
         }
 
         const length = password.length;
-        const chars = getAvailableChars();
-        const poolSize = chars.length || 1;
+        const poolSize = getAvailableChars().length || 1;
         const entropy = length * Math.log2(poolSize);
 
-        let strength = 'weak';
-        let strengthLabel = 'Fraca';
-        let crackTimeStr = 'Instantes';
+        return getStrengthByEntropy(entropy);
+    }
 
-        if (entropy >= 80) {
-            strength = 'strong';
-            strengthLabel = 'Forte';
-            crackTimeStr = '> 1000 anos';
-        } else if (entropy >= 60) {
-            strength = 'good';
-            strengthLabel = 'Boa';
-            crackTimeStr = '~ 50 anos';
-        } else if (entropy >= 40) {
-            strength = 'fair';
-            strengthLabel = 'Média';
-            crackTimeStr = '~ 1 dia';
-        } else if (entropy >= 30) {
-            strength = 'weak';
-            strengthLabel = 'Fraca';
-            crackTimeStr = '~ 1 hora';
-        } else if (entropy > 0) {
-            strength = 'weak';
-            strengthLabel = 'Fraca';
-            crackTimeStr = 'Instantes';
-        }
-
+    function getEmptyStrength() {
         return {
-            entropy: Math.round(entropy),
-            strength,
-            strengthLabel,
-            crackTime: crackTimeStr
+            entropy: 0,
+            strength: 'none',
+            strengthLabel: '—',
+            crackTime: '—'
         };
     }
 
-    // ===== FUNÇÃO: Atualizar indicadores de força =====
+    function getStrengthByEntropy(entropy) {
+        if (entropy >= 80) {
+            return { entropy: Math.round(entropy), strength: 'strong', strengthLabel: 'Forte', crackTime: '> 1000 anos' };
+        } else if (entropy >= 60) {
+            return { entropy: Math.round(entropy), strength: 'good', strengthLabel: 'Boa', crackTime: '~ 50 anos' };
+        } else if (entropy >= 40) {
+            return { entropy: Math.round(entropy), strength: 'fair', strengthLabel: 'Média', crackTime: '~ 1 dia' };
+        } else if (entropy >= 30) {
+            return { entropy: Math.round(entropy), strength: 'weak', strengthLabel: 'Fraca', crackTime: '~ 1 hora' };
+        } else {
+            return { entropy: Math.round(entropy) || 0, strength: 'weak', strengthLabel: 'Fraca', crackTime: 'Instantes' };
+        }
+    }
+
+    // ==========================================================
+    // 🎯 EASTER EGG - MODO ULTRA SEGURO
+    // ==========================================================
+    function isUltraSecureMode() {
+        // 1. TODAS as 4 flags marcadas
+        const allTypesChecked = 
+            DOM.uppercase.checked &&
+            DOM.lowercase.checked &&
+            DOM.numbers.checked &&
+            DOM.symbols.checked;
+
+        // 2. Tamanho MÁXIMO (30 caracteres)
+        const length = parseInt(DOM.lengthSlider.value);
+        const isMaxLength = length === CONFIG.MAX_LENGTH;
+
+        // 3. Opções extras de segurança
+        const avoidSimilar = DOM.avoidSimilar.checked;
+        const guarantee = DOM.guaranteeTypes.checked;
+
+        console.log('🎯 Easter Egg Check:', {
+            allTypesChecked,
+            isMaxLength,
+            length,
+            maxLength: CONFIG.MAX_LENGTH,
+            avoidSimilar,
+            guarantee,
+            ativo: allTypesChecked && isMaxLength && avoidSimilar && guarantee
+        });
+
+        // ATIVA SOMENTE com TODAS as condições
+        return allTypesChecked && isMaxLength && avoidSimilar && guarantee;
+    }
+
+    function getRandomUltraSecureMessage() {
+        return ULTRA_SECURE_MESSAGES[Math.floor(Math.random() * ULTRA_SECURE_MESSAGES.length)];
+    }
+
+    // ===== ATUALIZAR INTERFACE =====
     function updateStrength(password) {
         if (!password) {
-            strengthFill.className = 'strength-fill';
-            strengthFill.style.width = '0%';
-            strengthText.textContent = '—';
-            funMessage.textContent = '🔒 Gere uma senha para começar';
-            funMessage.style.background = 'var(--bg-yellow-light)';
-            funMessage.style.color = 'var(--accent-yellow)';
-            funMessage.style.fontWeight = '500';
+            resetStrengthDisplay();
             return;
         }
 
         const result = calculateStrength(password);
 
-        // Atualizar barra de força
-        strengthFill.className = `strength-fill ${result.strength}`;
-        strengthText.textContent = result.strengthLabel;
+        // Atualizar barra
+        DOM.strengthFill.className = `strength-fill ${result.strength}`;
+        DOM.strengthText.textContent = result.strengthLabel;
 
-        // ===== VERIFICAR MODO ULTRA SEGURO =====
+        // Atualizar mensagem
+        updateFunMessage(password, result);
+    }
+
+    function resetStrengthDisplay() {
+        DOM.strengthFill.className = 'strength-fill';
+        DOM.strengthFill.style.width = '0%';
+        DOM.strengthText.textContent = '—';
+        DOM.funMessage.textContent = '🔒 Gere uma senha para começar';
+        DOM.funMessage.style.background = 'var(--bg-yellow-light)';
+        DOM.funMessage.style.color = 'var(--accent-yellow)';
+        DOM.funMessage.style.fontWeight = '500';
+        DOM.funMessage.style.animation = 'none';
+        DOM.funMessage.style.backgroundSize = '';
+        DOM.funMessage.style.fontSize = '';
+        DOM.funMessage.style.padding = '';
+        DOM.funMessage.style.borderRadius = '';
+        DOM.funMessage.style.textShadow = '';
+        DOM.funMessage.style.border = '';
+        DOM.funMessage.style.boxShadow = '';
+    }
+
+    function updateFunMessage(password, result) {
+        // ======================================================
+        // 🎯 EASTER EGG: Verifica condições ESPECÍFICAS
+        // ======================================================
         if (isUltraSecureMode() && result.strength === 'strong') {
-            // Mensagem engraçada para modo ultra seguro
-            funMessage.textContent = getFunnyUltraSecureMessage();
-            funMessage.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            funMessage.style.color = '#ffffff';
-            funMessage.style.fontWeight = '600';
+            // Ativa o easter egg com estilo especial
+            const message = getRandomUltraSecureMessage();
+            DOM.funMessage.textContent = message;
+            DOM.funMessage.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24, #f093fb, #f5576c, #4facfe, #43e97b)';
+            DOM.funMessage.style.backgroundSize = '300% 300%';
+            DOM.funMessage.style.animation = 'gradientMove 3s ease infinite';
+            DOM.funMessage.style.color = '#ffffff';
+            DOM.funMessage.style.fontWeight = '700';
+            DOM.funMessage.style.fontSize = '20px';
+            DOM.funMessage.style.padding = '16px 24px';
+            DOM.funMessage.style.borderRadius = '12px';
+            DOM.funMessage.style.textShadow = '0 0 30px rgba(255,255,255,0.3)';
+            DOM.funMessage.style.border = '2px solid rgba(255,255,255,0.5)';
+            DOM.funMessage.style.boxShadow = '0 0 50px rgba(255,107,107,0.4)';
             return;
         }
 
-        // ===== MENSAGENS NORMAIS =====
-        const messages = {
-            strong: ['Senha fortíssima!', 'Impenetrável!', 'Poderosa!', 'Cofre seguro!'],
-            good: ['Boa senha!', 'Segura!', 'Confiável!'],
-            fair: ['Pode melhorar', 'Média segurança', 'Aumente os caracteres'],
-            weak: ['Senha fraca!', 'Muito curta!', 'Risco!']
+        // Mensagem normal
+        const messages = STRENGTH_MESSAGES[result.strength] || ['🔒 Gerando...'];
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        DOM.funMessage.textContent = randomMessage;
+
+        // Resetar estilos
+        DOM.funMessage.style.animation = 'none';
+        DOM.funMessage.style.backgroundSize = '';
+        DOM.funMessage.style.fontSize = '';
+        DOM.funMessage.style.padding = '';
+        DOM.funMessage.style.borderRadius = '';
+        DOM.funMessage.style.textShadow = '';
+        DOM.funMessage.style.border = '';
+        DOM.funMessage.style.boxShadow = '';
+
+        // Cores normais
+        const colors = {
+            strong: { bg: 'var(--bg-green-light)', color: 'var(--accent-green)' },
+            good: { bg: 'var(--bg-green-light)', color: '#2d8f3e' },
+            fair: { bg: 'var(--bg-yellow-light)', color: 'var(--accent-yellow)' },
+            weak: { bg: '#FFE8E8', color: '#FF4444' }
         };
 
-        const messageList = messages[result.strength] || ['🔒 Gerando...'];
-        const randomMessage = messageList[Math.floor(Math.random() * messageList.length)];
-
-        funMessage.textContent = randomMessage;
-
-        // Cores da mensagem
-        if (result.strength === 'strong') {
-            funMessage.style.background = 'var(--bg-green-light)';
-            funMessage.style.color = 'var(--accent-green)';
-            funMessage.style.fontWeight = '500';
-        } else if (result.strength === 'good') {
-            funMessage.style.background = 'var(--bg-green-light)';
-            funMessage.style.color = '#2d8f3e';
-            funMessage.style.fontWeight = '500';
-        } else if (result.strength === 'fair') {
-            funMessage.style.background = 'var(--bg-yellow-light)';
-            funMessage.style.color = 'var(--accent-yellow)';
-            funMessage.style.fontWeight = '500';
-        } else {
-            funMessage.style.background = '#FFE8E8';
-            funMessage.style.color = '#FF4444';
-            funMessage.style.fontWeight = '500';
-        }
+        const color = colors[result.strength] || colors.weak;
+        DOM.funMessage.style.background = color.bg;
+        DOM.funMessage.style.color = color.color;
+        DOM.funMessage.style.fontWeight = '500';
     }
 
-    // ===== FUNÇÃO: Gerar e atualizar tudo =====
     function generateAndUpdate() {
         const password = generatePassword();
         if (password) {
-            passwordInput.value = password;
+            DOM.password.value = password;
             updateStrength(password);
         } else {
             updateStrength('');
         }
     }
 
-    // ===== EVENT: Gerar senha =====
-    generateBtn.addEventListener('click', generateAndUpdate);
+    // ===== FUNÇÕES DE COPIA =====
+    async function copyPassword() {
+        const text = DOM.password.value;
 
-    // ===== EVENT: Copiar senha =====
-    copyBtn.addEventListener('click', async () => {
-        const text = passwordInput.value;
-        
-        if (!text || text === '⚠️ Selecione um tipo' || text === '') {
-            copyBtn.textContent = '⚠️ Nada';
-            copyBtn.style.background = '#FF4444';
-            setTimeout(() => {
-                copyBtn.textContent = 'Copiar';
-                copyBtn.style.background = 'var(--primary)';
-            }, 2000);
+        if (!text || text === '⚠️ Selecione um tipo') {
+            showCopyFeedback('⚠️ Nada', '#FF4444');
             return;
         }
 
         try {
             await navigator.clipboard.writeText(text);
-            copyBtn.textContent = '✅ Copiado!';
-            copyBtn.style.background = 'var(--accent-green)';
-            setTimeout(() => {
-                copyBtn.textContent = 'Copiar';
-                copyBtn.style.background = 'var(--primary)';
-            }, 2000);
+            showCopyFeedback('✅ Copiado!', 'var(--accent-green)');
         } catch {
-            passwordInput.select();
+            DOM.password.select();
             document.execCommand('copy');
-            copyBtn.textContent = '✅ Copiado!';
-            copyBtn.style.background = 'var(--accent-green)';
-            setTimeout(() => {
-                copyBtn.textContent = 'Copiar';
-                copyBtn.style.background = 'var(--primary)';
-            }, 2000);
+            showCopyFeedback('✅ Copiado!', 'var(--accent-green)');
         }
-    });
+    }
 
-    // ===== EVENT: Resetar padrão =====
-    resetBtn.addEventListener('click', () => {
-        uppercaseCheck.checked = true;
-        lowercaseCheck.checked = true;
-        numbersCheck.checked = true;
-        symbolsCheck.checked = false;
-        avoidSimilarCheck.checked = false;
-        guaranteeTypesCheck.checked = true;
+    function showCopyFeedback(text, color) {
+        DOM.copyBtn.textContent = text;
+        DOM.copyBtn.style.background = color;
+        setTimeout(() => {
+            DOM.copyBtn.textContent = 'Copiar';
+            DOM.copyBtn.style.background = 'var(--primary)';
+        }, 2000);
+    }
 
-        lengthSlider.value = 16;
-        lengthValue.textContent = '16';
+    // ===== RESET =====
+    function resetToDefaults() {
+        DOM.uppercase.checked = true;
+        DOM.lowercase.checked = true;
+        DOM.numbers.checked = true;
+        DOM.symbols.checked = false;
+        DOM.avoidSimilar.checked = false;
+        DOM.guaranteeTypes.checked = true;
 
-        passwordInput.value = '';
+        DOM.lengthSlider.value = CONFIG.DEFAULT_LENGTH;
+        DOM.lengthValue.textContent = CONFIG.DEFAULT_LENGTH;
+
+        DOM.password.value = '';
         updateStrength('');
-    });
+    }
 
-    // ===== EVENT: Atualizar valor do slider =====
-    lengthSlider.addEventListener('input', () => {
-        lengthValue.textContent = lengthSlider.value;
-    });
+    // ===== CONFIGURAR SLIDER =====
+    function setupSlider() {
+        DOM.lengthSlider.min = CONFIG.MIN_LENGTH;
+        DOM.lengthSlider.max = CONFIG.MAX_LENGTH;
+        DOM.lengthSlider.value = CONFIG.DEFAULT_LENGTH;
+        DOM.lengthSlider.step = 1;
+        DOM.lengthValue.textContent = CONFIG.DEFAULT_LENGTH;
 
-    // ===== EVENT: Atualizar senha ao mudar configurações =====
-    const configInputs = [
-        uppercaseCheck, lowercaseCheck, numbersCheck, symbolsCheck,
-        avoidSimilarCheck, guaranteeTypesCheck
-    ];
+        DOM.lengthSlider.addEventListener('input', () => {
+            DOM.lengthValue.textContent = DOM.lengthSlider.value;
+        });
 
-    configInputs.forEach(input => {
-        input.addEventListener('change', () => {
-            if (passwordInput.value && passwordInput.value !== '⚠️ Selecione um tipo') {
+        DOM.lengthSlider.addEventListener('change', () => {
+            const currentPassword = DOM.password.value;
+            if (currentPassword && currentPassword !== '⚠️ Selecione um tipo') {
                 generateAndUpdate();
             }
         });
-    });
+    }
 
-    lengthSlider.addEventListener('change', () => {
-        if (passwordInput.value && passwordInput.value !== '⚠️ Selecione um tipo') {
-            generateAndUpdate();
-        }
-    });
+    // ===== EVENT LISTENERS =====
+    function setupEventListeners() {
+        DOM.generateBtn.addEventListener('click', generateAndUpdate);
+        DOM.copyBtn.addEventListener('click', copyPassword);
+        DOM.resetBtn.addEventListener('click', resetToDefaults);
 
-    // ===== GERAR SENHA INICIAL =====
-    generateAndUpdate();
-});
+        const configInputs = [
+            DOM.uppercase, DOM.lowercase, DOM.numbers, DOM.symbols,
+            DOM.avoidSimilar, DOM.guaranteeTypes
+        ];
+
+        configInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const currentPassword = DOM.password.value;
+                if (currentPassword && currentPassword !== '⚠️ Selecione um tipo') {
+                    generateAndUpdate();
+                }
+            });
+        });
+    }
+
+    // ===== CSS ANIMATION (injetada) =====
+    function injectEasterEggStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes gradientMove {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // ===== INIT =====
+    function init() {
+        if (!validateElements()) return;
+
+        injectEasterEggStyles();
+        setupSlider();
+        setupEventListeners();
+        generateAndUpdate();
+
+        console.log('✅ Gerador de senhas inicializado (max: 30 caracteres)');
+        console.log('🎯 Easter Egg: ativa com 30 caracteres + todas as flags!');
+    }
+
+    // ===== INICIAR =====
+    document.addEventListener('DOMContentLoaded', init);
+
+})();
