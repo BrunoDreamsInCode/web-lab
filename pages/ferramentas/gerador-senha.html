@@ -10,16 +10,6 @@
 </head>
 <body>
 
-<!-- AVISO PARA MOBILE - SITE EM CONSTRUÇÃO -->
-<div class="mobile-aviso">
-    <div class="mobile-aviso-conteudo">
-        <h1>🚧 Em Breve</h1>
-        <p>Versão mobile em desenvolvimento.</p>
-        <p>Por enquanto, acesse pelo computador.</p>
-    </div>
-</div>
-
-
 <!-- Barra de navegação do site-->
 <nav class="navbar">
     <div class="container">
@@ -28,6 +18,15 @@
             <span class="logo-primary">BHD</span>
             <span class="logo-secondary">Tools</span>
         </a>
+
+        
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+
 
         <ul class="menu">
             <li><a href="/index.html" class="btn-inicio">Início</a></li>
@@ -129,7 +128,7 @@
                 type="range"
                 id="length"
                 min="4"
-                max="64"
+                max="30"
                 value="16">
 
         </fieldset>
@@ -405,6 +404,26 @@
 </footer>
 
     <script src="../../assets/js/gerador-senhas.js"></script>
+
+        <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('open');
+            this.classList.toggle('active');
+        });
+
+        // Fecha menu ao clicar em link
+        document.querySelectorAll('.menu-link, .btn-inicio').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
+
+
 
 </body>
 </html>
