@@ -54,53 +54,38 @@
     --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-
-/*Aviso -BLOQUEIO MOBILE TEMPORÁRIO- Aviso*/
-.mobile-aviso {
-    display: none;
+/* ========== MENU HAMBÚRGUER - ESTILOS BASE ========== */
+.menu-toggle {
+    display: none; /* Escondido em desktop */
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
 }
-/* Em telas pequenas, visual para mostrar aviso - indicando que mobile está em construção */
-@media (max-width: 768px) {
-    .mobile-aviso {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100vw;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: var(--background);
-        z-index: 9999;
-        font-family: Inter, sans-serif;
-        text-align: center;
-        padding: 20px;
-    }
-/*Visual para o AVISO PRINCIPAL */
-    .mobile-aviso-conteudo h1 {
-        font-size: 28px;
-        font-weight: 700;
-        color: var(--text-primary);
-        margin-bottom: 10px;
-    }
 
-/*Visual para o descrição do aviso*/
-    .mobile-aviso-conteudo p {
-        font-size: 16px;
-        color: var(--text-secondary);
-        margin-bottom: 5px;
-    }
-
-    /* Esconde TODO o conteúdo do site - pois mobile será implementado por ultimo*/
-    .navbar,
-    .hero-container,
-    .wide-banner,
-    .wide-container,
-    .bloco-ferramentas {
-        display: none !important;
-    }
+.hamburger-line {
+    width: 28px;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 3px;
+    transition: 0.3s;
 }
-/*Aviso -BLOQUEIO MOBILE TEMPORÁRIO- Aviso*/
+
+/* Animação para virar "X" quando aberto */
+.menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
 
 /*Codes de sintaxe simulando código*/
 .syntax-keyword {color: var(--syntax-keyword)}
@@ -820,6 +805,405 @@ body {
 /* ========== FOOTER ========== */
 
 
+/* ============================================================
+   📱 RESPONSIVO - MEDIA QUERIES (COLE ISSO NO FINAL)
+   ============================================================ */
 
+/* ========== TABLET (768px - 1024px) ========== */
+@media (max-width: 1024px) {
+    
+    /* --- CONTAINER --- */
+    .container {
+        padding: 0 20px;
+        position: relative;
+    }
 
+    /* --- MENU HAMBÚRGUER --- */
+    .menu-toggle {
+        display: flex !important;
+    }
 
+    /* --- MENU MOBILE --- */
+    .menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--surface);
+        padding: 20px;
+        box-shadow: var(--shadow-md);
+        gap: 10px;
+        border-top: 1px solid var(--border);
+    }
+
+    .menu.open {
+        display: flex !important;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu-link {
+        height: 45px;
+        padding: 0 15px;
+        border-radius: var(--radius-sm);
+        width: 100%;
+    }
+
+    .menu-link:hover {
+        background: var(--bg-blue-light);
+        color: var(--primary);
+    }
+
+    .btn-inicio {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 15px;
+    }
+
+    /* --- SOCIAL ICONS (menores) --- */
+    .socials img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .socials li:last-child img {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* --- LOGO (menor) --- */
+    .logo {
+        font-size: 20px;
+    }
+
+    /* --- HERO (empilhar) --- */
+    .hero {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .hero-content,
+    .hero-code {
+        min-height: auto;
+        width: 100%;
+    }
+
+    .hero-heading {
+        font-size: 22px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero-code {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .code-block {
+        padding: 4px 12px;
+    }
+
+    /* --- STATS BANNER (quebra em 2 colunas) --- */
+    .stats-banner {
+        padding: 0 20px;
+        height: auto;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .stats-item {
+        flex: 1 1 45%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 15px 10px;
+    }
+
+    .stats-item:last-child {
+        border-bottom: none;
+    }
+
+    .stats-info span {
+        font-size: 20px;
+    }
+
+    /* --- SECTION HEADER --- */
+    .section-header {
+        padding: 0 20px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .section-subtitle {
+        font-size: 17px;
+    }
+
+    /* --- TOOLS GRID (2 cards por linha) --- */
+    .tools-grid {
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .tool-card {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 280px;
+    }
+
+    /* --- ABOUT SECTION (empilhar) --- */
+    .about-section {
+        padding: 0 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-btn {
+        width: 100%;
+    }
+
+    /* --- CONTACT BANNER --- */
+    .contact-banner {
+        margin: 45px 20px;
+        padding: 25px 20px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact-text h2 {
+        font-size: 22px;
+    }
+
+    .contact-text p {
+        font-size: 17px;
+    }
+
+    .contact-actions {
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .contact-actions .btn {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .footer h3 {
+        font-size: 14px;
+    }
+}
+
+/* ========== MOBILE PEQUENO (até 480px) ========== */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .socials {
+        gap: 10px;
+    }
+
+    .socials img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .socials li:last-child img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .menu {
+        top: 65px;
+        padding: 15px;
+    }
+
+    .hero-heading {
+        font-size: 19px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-code {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .code-block {
+        padding: 2px 10px;
+    }
+
+    .code-header {
+        padding: 8px 12px;
+    }
+
+    .code-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .stats-item {
+        flex: 1 1 100%;
+    }
+
+    .stats-info span {
+        font-size: 18px;
+    }
+
+    .stats-info p {
+        font-size: 14px;
+    }
+
+    .tool-card {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+
+    .tool-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tool-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tool-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tool-links {
+        flex-wrap: wrap;
+    }
+
+    .tool-links .btn-sm {
+        flex: 1 1 calc(50% - 4px);
+        white-space: normal;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+
+    .tool-tags {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tag {
+        font-size: 12px;
+        padding: 6px 12px;
+        height: 26px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    .about-title {
+        font-size: 18px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .tech-item {
+        font-size: 12px;
+    }
+
+    .tech-icon img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contact-banner {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-text h2 {
+        font-size: 19px;
+    }
+
+    .contact-text p {
+        font-size: 15px;
+    }
+
+    .contact-actions .btn {
+        min-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .footer h3 {
+        font-size: 12px;
+    }
+
+    .btn {
+        height: 40px;
+        font-size: 13px;
+        padding: 0 18px;
+    }
+}
