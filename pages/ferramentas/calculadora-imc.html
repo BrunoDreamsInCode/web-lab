@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/calculadora-imc.css">
+
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon/BHD-Tools SVG.svg">
+    <title>BHD Tools</title>
+</head>
+<body>
+
+<!-- Barra de navegação do site-->
+<nav class="navbar">
+    <div class="container">
+
+        <a href="/index.html" class="logo">
+            <span class="logo-primary">BHD</span>
+            <span class="logo-secondary">Tools</span>
+        </a>
+
+        
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+
+
+        <ul class="menu">
+            <li><a href="/index.html" class="btn-inicio">Início</a></li>
+            <li><a href="/index.html#ir-para-projetos" class="menu-link">Todos os Projetos</a></li>
+            <li><a href="/index.html" class="menu-link">Sobre</a></li>
+            <li><a href="/index.html#ir-para-contato" class="menu-link">Contato</a></li>
+        </ul>
+
+        <ul class="socials">
+            <li>
+                <a href="https://github.com/BrunoDreamsInCode" target="_blank">
+                    <img src="https://img.icons8.com/fluency-systems-filled/96/github.png" alt="GitHub"/>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.linkedin.com/in/bruno-henrique-domingos/" target="_blank">
+                    <img src="https://img.icons8.com/fluency/96/linkedin.png" alt="linkedIn"/>    
+                </a>
+            </li>
+
+            
+            <li>
+                <a href="https://wa.me/5511999560559?text=Ol%C3%A1%2C%20Bruno%21%20Vi%20seu%20portf%C3%B3lio%20Web%20Lab%20e%20gostaria%20de%20conversar." target="_blank">
+                    <img src="../../assets/icons/whatsapp.png" alt="whatsapp"/>    
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>    
+
+
+
+<div class="todo-conteudo-site">
+
+    <!-- Apresentação da ferramenta -->
+    <section class="tool-hero">
+
+        <div class="tool-hero-icon bg-green-light">
+            <svg fill="#27C93F" width="256px" height="256px" viewBox="0 0 512.00 512.00" id="fill" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.024"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M398.592,14H115.409A100.522,100.522,0,0,0,15,114.409V397.592A100.522,100.522,0,0,0,115.409,498H398.592A100.522,100.522,0,0,0,499,397.592V114.409A100.522,100.522,0,0,0,398.592,14ZM487,397.592A88.509,88.509,0,0,1,398.592,486H115.409A88.509,88.509,0,0,1,27,397.592V114.409A88.509,88.509,0,0,1,115.409,26H398.592A88.509,88.509,0,0,1,487,114.409Z"></path><path d="M402.23,83H111.77A27.8,27.8,0,0,0,84,110.77V401.23A27.8,27.8,0,0,0,111.77,429H402.23A27.8,27.8,0,0,0,430,401.23V110.77A27.8,27.8,0,0,0,402.23,83ZM335,95v44.58A15.437,15.437,0,0,1,319.58,155H194.42A15.437,15.437,0,0,1,179,139.58V95Zm83,306.23A15.787,15.787,0,0,1,402.23,417H111.77A15.787,15.787,0,0,1,96,401.23V110.77A15.787,15.787,0,0,1,111.77,95H167v44.58A27.45,27.45,0,0,0,194.42,167H319.58A27.451,27.451,0,0,0,347,139.58V95h55.23A15.787,15.787,0,0,1,418,110.77Z"></path><path d="M224.1,321.2c3.573-15.7,5.273-37.458-.706-52.686a53,53,0,1,0-98.668,38.737c4.819,12.274,17.868,26.887,33.794,38.041a41.1,41.1,0,0,0,2.026,23.1c3.966,10.1,12.424,19.958,22.624,26.367,7.638,4.8,15.422,7.246,22.734,7.246a30.159,30.159,0,0,0,11.079-2.055c21.14-8.3,28.167-40.445,19.892-61.526A40.688,40.688,0,0,0,224.1,321.2Zm-11.5,67.577c-6.409,2.517-14.809.993-23.043-4.181-7.987-5.019-14.822-12.909-17.839-20.592a29.023,29.023,0,0,1-.616-19.47,6,6,0,0,0-2.441-6.874c-15.34-9.968-28.506-23.951-32.763-34.794A41,41,0,1,1,212.221,272.9c4.42,11.26,4.128,31.072-.726,49.3a6,6,0,0,0,2.614,6.63A28.787,28.787,0,0,1,225.7,342.807C231.823,358.4,226.879,383.169,212.6,388.777Z"></path><path d="M188.923,231.7a13.71,13.71,0,0,0,2.581-.245c9.913-1.9,15.615-14.17,12.979-27.938s-12.467-23.068-22.379-21.171-15.614,14.169-12.979,27.938C171.531,222.853,179.934,231.7,188.923,231.7ZM184.36,194.13a1.8,1.8,0,0,1,.341-.031c2.42,0,6.595,4.353,8,11.672,1.47,7.675-1.1,13.446-3.449,13.9s-6.868-3.965-8.337-11.64S182.015,194.579,184.36,194.13Z"></path><path d="M151.967,225.762a6,6,0,1,0,11.286-4.077L158.31,208a6,6,0,0,0-11.287,4.077Z"></path><path d="M135.783,235.963a6,6,0,1,0,10.434-5.926l-9.991-17.592a6,6,0,0,0-10.435,5.927Z"></path><path d="M123.2,249.488a6,6,0,1,0,9.13-7.788l-11.16-13.082a6,6,0,0,0-9.13,7.788Z"></path><path d="M121.676,258.745l-9-10.545a6,6,0,0,0-9.13,7.788l9,10.544a6,6,0,0,0,9.13-7.787Z"></path><path d="M359.313,238.548a53.063,53.063,0,0,0-68.7,29.966c-5.979,15.228-4.28,36.986-.706,52.686a40.675,40.675,0,0,0-12.774,17.222c-8.276,21.08-1.249,53.225,19.892,61.525A30.13,30.13,0,0,0,308.1,402c7.311,0,15.1-2.447,22.733-7.246,10.2-6.409,18.659-16.267,22.624-26.366a41.085,41.085,0,0,0,2.027-23.1c15.925-11.153,28.974-25.765,33.794-38.041A53.059,53.059,0,0,0,359.313,238.548Zm18.794,64.318c-4.257,10.844-17.424,24.827-32.764,34.794a6,6,0,0,0-2.441,6.875A29.008,29.008,0,0,1,342.286,364c-3.016,7.683-9.851,15.573-17.838,20.592-8.234,5.174-16.631,6.7-23.043,4.181-14.284-5.608-19.228-30.379-13.106-45.969a28.788,28.788,0,0,1,11.592-13.98,6,6,0,0,0,2.615-6.63c-4.856-18.228-5.148-38.04-.727-49.3a41,41,0,1,1,76.328,29.968Z"></path><path d="M322.5,231.453a13.717,13.717,0,0,0,2.581.245c8.987,0,17.392-8.846,19.8-21.416,2.636-13.768-3.065-26.04-12.978-27.938s-19.745,7.4-22.379,21.171h0C306.882,217.284,312.583,229.555,322.5,231.453ZM321.3,205.771c1.469-7.674,5.974-12.1,8.338-11.641,2.345.449,4.918,6.221,3.449,13.9s-5.992,12.093-8.337,11.641-4.918-6.221-3.449-13.9Z"></path><path d="M354.352,229.367a6,6,0,0,0,7.681-3.6l4.944-13.686A6,6,0,0,0,355.689,208l-4.943,13.686A6,6,0,0,0,354.352,229.367Z"></path><path d="M370.036,238.217a6,6,0,0,0,8.181-2.254l9.992-17.591a6,6,0,1,0-10.434-5.927l-9.992,17.592A6,6,0,0,0,370.036,238.217Z"></path><path d="M382.34,250.159a6,6,0,0,0,8.458-.671l11.159-13.082a6,6,0,1,0-9.129-7.788L381.669,241.7A6,6,0,0,0,382.34,250.159Z"></path><path d="M409.777,247.529a6,6,0,0,0-8.458.671l-9,10.545a6,6,0,1,0,9.129,7.787l9-10.544A6,6,0,0,0,409.777,247.529Z"></path><path d="M206,131h10.5a6,6,0,0,0,0-12H206a6,6,0,0,0,0,12Z"></path><path d="M243.5,131h27a6,6,0,0,0,0-12h-27a6,6,0,0,0,0,12Z"></path><path d="M297.5,131H308a6,6,0,0,0,0-12H297.5a6,6,0,0,0,0,12Z"></path></g></svg>        </div>
+
+        <div class="tool-hero-content">
+
+            <div class="tag-tipo bg-green-light green-span">
+                <span>Saúde</span>
+            </div>
+
+            <h2>Calculadora IMC</h2>
+            <p class="subtitulo">Calcule seu IMC e visualize sua faixa de peso de forma simples e intuitiva</p>
+
+            <div class="tool-features">
+
+                <div class="tool-feature">
+                    <div class="tool-feature-icon bg-blue-light">
+                        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <span>100% Funcional</span>
+                </div>
+
+                <div class="tool-feature">
+                    <div class="tool-feature-icon bg-blue-light">
+                        <svg width="25px" height="25px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#0066FF"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#0066FF;} </style> <g> <path class="st0" d="M256.001,0L29.89,130.537c0,47.476,4.506,88.936,12.057,125.463C88.61,481.721,256.001,512,256.001,512 s167.389-30.279,214.053-256c7.551-36.527,12.057-77.986,12.057-125.463L256.001,0z M256.118,466.723 c-0.035-0.012-0.082-0.028-0.117-0.039v-47.672V256H140.77H91.122c-6.67-29.738-11.109-63.506-12.394-101.93L255.999,51.728h0.002 v51.73V256h115.27h49.625C385.636,413.404,287.327,456.774,256.118,466.723z"></path> </g> </g></svg>
+                    </div>
+                    <span>Cálculo Instantâneo</span>
+                </div>
+                <div class="tool-feature">
+                    <div class="tool-feature-icon bg-blue-light">
+                      
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
+                            <rect x="3" y="10" width="4" height="11" rx="1"/>
+                            <rect x="10" y="6" width="4" height="15" rx="1"/>
+                            <rect x="17" y="2" width="4" height="19" rx="1"/>
+                            <path d="M3 21h18"/>
+                        </svg>
+             
+                    </div>
+                    <span>Resultado Visual</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Área da ferramenta -->
+<section class="tool-area card">
+
+    <!-- Em construção -->
+
+</section>
+
+
+
+    <!-- Código-fonte -->
+    <section class="tool-code card">
+        <div class="tool-code-info">
+            <div class="tool-code-icon bg-blue-light">
+                <svg viewBox="0 0 24 24" stroke="var(--accent-blue)" fill="none" stroke-width="2">
+                    <path d="M9 8L5 11.6923L9 16M15 8L19 11.6923L15 16"/>
+                </svg>
+            </div>
+            <div>
+                <h3>Código-fonte</h3>
+                <p class="subtitulo">Veja o código-fonte deste projeto ou utilize em seus próprios projetos.</p>
+            </div>
+        </div>
+
+        <div class="tool-code-links">
+            <a href="https://github.com/BrunoDreamsInCode/web-lab/blob/main/pages/ferramentas/gerador-senha.html" target="_blank" class="btn btn-outline">
+                    <img src="../../assets/icons/html-5.png">
+                <span>HTML</span>
+            </a>
+            <a href="https://github.com/BrunoDreamsInCode/web-lab/blob/main/assets/css/gerador-senha.css" target="_blank" class="btn btn-outline">
+                <img src="../../assets/icons/css-3.png">
+                <span>CSS</span>
+            </a>
+            <a href="https://github.com/BrunoDreamsInCode/web-lab/blob/main/assets/js/gerador-senhas.js" target="_blank" class="btn btn-outline">
+                    <img src="../../assets/icons/js.png">
+                <span>JavaScript</span>
+            </a>
+            <a href="https://github.com/BrunoDreamsInCode/web-lab/tree/main" target="_blank" class="btn btn-outline">
+                    <img src="../../assets/icons/github.png">
+                <span>GitHub</span>
+            </a>
+        </div>
+    </section>
+
+
+    
+    <!-- Sobre a ferramenta -->
+    <section class="tool-about card">
+        <div class="tool-about-header">
+            <div class="tool-code-icon bg-blue-light">
+                <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#0D6EFD"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#0D6EFD;} </style> <g> <path class="st0" d="M290.671,135.434c37.324-3.263,64.949-36.175,61.663-73.498c-3.241-37.324-36.152-64.938-73.476-61.675 c-37.324,3.264-64.949,36.164-61.686,73.488C220.437,111.096,253.348,138.698,290.671,135.434z"></path> <path class="st0" d="M311.31,406.354c-16.134,5.906-43.322,22.546-43.322,22.546s20.615-95.297,21.466-99.446 c8.71-41.829,33.463-100.86-0.069-136.747c-23.35-24.936-53.366-18.225-79.819,7.079c-17.467,16.696-26.729,27.372-42.908,45.322 c-6.55,7.273-9.032,14.065-5.93,24.717c3.332,11.515,16.8,17.226,28.705,12.871c16.134-5.895,43.3-22.534,43.3-22.534 s-12.595,57.997-18.869,87c-0.874,4.137-36.06,113.292-2.505,149.18c23.35,24.949,53.343,18.226,79.819-7.066 c17.467-16.698,26.729-27.373,42.908-45.334c6.55-7.263,9.009-14.054,5.93-24.706C336.66,407.733,323.215,402.01,311.31,406.354z"></path> </g> </g></svg>            </div>
+           
+                <div>
+                    <h3>Sobre esta ferramenta</h3>
+                        <p class="subtitulo">Esta ferramenta foi criada para calcular seu Índice de Massa Corporal (IMC) de forma rápida e simples</p>
+                        <p class="subtitulo">Informe seu peso e altura para descobrir seu IMC e visualizar em qual faixa de classificação você se encontra</p>
+                        <p class="subtitulo">O resultado é calculado diretamente no seu navegador, sem enviar ou armazenar seus dados.</p>
+                </div>
+            </div>
+
+    <div class="tool-about-features">
+        <div class="tool-about-feature">
+            <div class="tool-feature-icon bg-blue-light">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+            </div>
+            <div>
+                <span class="tit">Privacidade Total</span>
+                <span class="subt">Nada é enviado para internet</span>
+            </div>
+        </div>
+        <div class="tool-about-feature">
+            <div class="tool-feature-icon bg-blue-light">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
+                    <path d="M4 14L9 19L20 8M6 8.88889L9.07692 12L16 5"/>
+                </svg>
+            </div>
+            <div>
+                <span class="tit">100% Gratuita</span>
+                <span class="subt">Use sem limites e sem cadastro</span>
+            </div>
+        </div>
+        <div class="tool-about-feature">
+            <div class="tool-feature-icon bg-blue-light">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
+                    <path d="M17 7.82959L18.6965 9.35641C20.239 10.7447 21.0103 11.4389 21.0103 12.3296C21.0103 13.2203 20.239 13.9145 18.6965 15.3028L17 16.8296"/>
+                    <path d="M13.9868 5L12.9934 8.70743M11.8432 13L10.0132 19.8297"/>
+                    <path d="M7.00005 7.82959L5.30358 9.35641C3.76102 10.7447 2.98975 11.4389 2.98975 12.3296C2.98975 13.2203 3.76102 13.9145 5.30358 15.3028L7.00005 16.8296"/>
+                </svg>
+            </div>
+            <div>
+                <span class="tit">Código aberto</span>
+                <span class="subt">Transparente e confiável</span>
+            </div>
+        </div>
+        <div class="tool-about-feature">
+            <div class="tool-feature-icon bg-blue-light">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <div>
+                <span class="tit">Leve e rápida</span>
+                <span class="subt">Funciona em qualquer dispositivo</span>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+</div>
+
+
+
+
+    <!--Container de sugestão-->
+    <section class="contact-banner card">
+        
+        <div class="contact-icon bg-blue-light">
+            <img src="../../assets/icons/contact-svg.svg" alt="Contato">
+        </div>
+
+        <div class="contact-text">
+            <h2>Tem alguma ideia de ferramenta?</h2>
+            <p>Sugira uma nova ferramenta para BHDTools!</p>
+        </div>
+
+        <div class="contact-actions">
+            <a href="https://www.linkedin.com/in/bruno-henrique-domingos/" class="btn btn-outline-light blue-text" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.3009 13.6949L20.102 3.89742M10.5795 14.1355L12.8019 18.5804C13.339 19.6545 13.6075 20.1916 13.9458 20.3356C14.2394 20.4606 14.575 20.4379 14.8492 20.2747C15.1651 20.0866 15.3591 19.5183 15.7472 18.3818L19.9463 6.08434C20.2845 5.09409 20.4535 4.59896 20.3378 4.27142C20.2371 3.98648 20.013 3.76234 19.7281 3.66167C19.4005 3.54595 18.9054 3.71502 17.9151 4.05315L5.61763 8.2523C4.48114 8.64037 3.91289 8.83441 3.72478 9.15032C3.56153 9.42447 3.53891 9.76007 3.66389 10.0536C3.80791 10.3919 4.34498 10.6605 5.41912 11.1975L9.86397 13.42C10.041 13.5085 10.1295 13.5527 10.2061 13.6118C10.2742 13.6643 10.3352 13.7253 10.3876 13.7933C10.4468 13.87 10.491 13.9585 10.5795 14.1355Z" stroke="#0D6EFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                Enviar Sugestão
+            </a>
+            <a href="https://github.com/BrunoDreamsInCode" class="btn btn-outline-light" target="_blank">
+                <img src="https://img.icons8.com/fluency-systems-filled/96/github.png" alt="GitHub" width="20" height="20"/>
+                Ver no GitHub
+            </a>
+        </div>
+
+    </section>
+
+
+
+<footer class="footer">
+    <h3>© 2026 Bruno Henrique Domingos. Todos os direitos reservados.</h3>
+</footer>
+
+    <script src="../../assets/js/calculadora-imc.js"></script>
+
+        <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('open');
+            this.classList.toggle('active');
+        });
+
+        // Fecha menu ao clicar em link
+        document.querySelectorAll('.menu-link, .btn-inicio').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
+
+
+
+</body>
+</html>
