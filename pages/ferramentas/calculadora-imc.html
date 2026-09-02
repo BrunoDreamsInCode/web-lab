@@ -116,10 +116,67 @@
 
 
 <!-- Área da ferramenta  !EM CONSTRUÇÃO! -->
-<section class="tool-area card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; gap: 15px; text-align: center;">
-    <div style="font-size: 30px;">🚧</div>
-    <h2 style="color: var(--text-primary);">Em Construção</h2>
-    <p style="color: var(--text-secondary); font-size: 18px; max-width: 400px;">Estamos trabalhando para disponibilizar esta ferramenta em breve.</p>
+<section class="tool-area card">
+
+    <!-- ===== COLUNA ESQUERDA - CONFIGURAÇÕES ===== -->
+    <div class="config-col">
+        <h2>Calculadora de IMC</h2>
+        <p class="subtitulo">Preencha seus dados</p>
+
+
+        <form class="imc-form" id="imc-form">
+            <label for="altura">Altura(cm)</label>
+            <div class="input-wrapper">
+                <input 
+                type="number"
+                id="altura"
+                name="altura"
+                placeholder="170"
+                step="0.1"
+                min="1"
+                max="300"
+                required
+                >
+            </div>
+
+
+            <label for="peso">Peso(kg)</label>
+            <div class="input-wrapper">
+                <input 
+                type="number"
+                id="peso"
+                name="peso"
+                placeholder="63.5"
+                step="0.1"
+                min="1"
+                max="300"
+                required
+                >
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Calcular IMC
+            </button>
+
+
+
+        </form>
+
+
+
+
+
+    </div>
+    <!-- ===== FIM COLUNA ESQUERDA ===== -->
+
+
+    <!-- ===== COLUNA DIREITA - OUTPUT ===== -->
+    <div class="output-col" id="resultado">
+
+    </div>
+    <!-- ===== FIM COLUNA DIREITA ===== -->
+
+
 </section>
 
 
