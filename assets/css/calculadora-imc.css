@@ -1390,12 +1390,13 @@ body {
     gap: 6px;
 }
 
+/* LABEL - Escura e um pouco maior */
 .form-group label {
-    font-weight: 500;
-    font-size: var(--font-size-sm);
-    color: var(--text-secondary);
+    font-weight: 700;         
+    font-size: 1.0rem;        
+    color: var(--text-primary); 
+    letter-spacing: 0.3px;
 }
-
 .input-wrapper {
     position: relative;
 }
@@ -1757,6 +1758,23 @@ body {
     font-size: 0.6rem;
     font-weight: 600;
     color: var(--text-secondary);
+}
+
+/* ===== ÍCONE DO INPUT (kg / cm) ===== */
+.input-wrapper .input-icon {
+    position: absolute;
+    right: 8px;                  
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);         
+    background: var(--bg-blue-light); 
+    padding: 4px 10px;
+    border-radius: 6px;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(13, 110, 253, 0.15);
 }
 
 .color-box {
