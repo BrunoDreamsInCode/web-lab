@@ -123,62 +123,74 @@
         <h2>Calculadora de IMC</h2>
         <p class="subtitulo">Preencha seus dados</p>
 
-
         <form class="imc-form" id="imc-form">
-            <label for="altura">Altura(cm)</label>
-            <div class="input-wrapper">
-                <input 
-                type="number"
-                id="altura"
-                name="altura"
-                placeholder="170"
-                step="0.1"
-                min="1"
-                max="300"
-                required
-                >
+            <div class="form-group">
+                <label for="peso"><strong>Peso (kg)</strong></label>
+                <div class="input-wrapper">
+                    <input 
+                        type="number"
+                        id="peso"
+                        name="peso"
+                        placeholder="63.5"
+                        step="0.1"
+                        min="1"
+                        max="300"
+                        required
+                    >
+                    <span class="input-icon">kg</span>
+                </div>
             </div>
 
-
-            <label for="peso">Peso(kg)</label>
-            <div class="input-wrapper">
-                <input 
-                type="number"
-                id="peso"
-                name="peso"
-                placeholder="63.5"
-                step="0.1"
-                min="1"
-                max="300"
-                required
-                >
+            <div class="form-group">
+                <label for="altura"><strong>Altura (cm)</strong></label>
+                <div class="input-wrapper">
+                    <input 
+                        type="number"
+                        id="altura"
+                        name="altura"
+                        placeholder="170"
+                        step="0.1"
+                        min="1"
+                        max="300"
+                        required
+                    >
+                    <span class="input-icon">cm</span>
+                </div>
             </div>
 
-            <button type="submit" class="btn-primary">
-                Calcular IMC
-            </button>
-
-
-
+            <div class="button-group">
+                <button type="submit" class="btn-primary">
+                    Calcular IMC
+                </button>
+                <button type="reset" class="btn-secondary" id="limparBtn">
+                    Limpar campos
+                </button>
+            </div>
         </form>
 
-
-
-
-
+        <div class="tool-info-box">
+            <div class="tool-info-icon">ℹ️</div>
+            <div>
+                <h4>Importante</h4>
+                <p>IMC é um indicador utilizado para adultos entre 18 e 65 anos.</p>
+            </div>
+        </div>
     </div>
     <!-- ===== FIM COLUNA ESQUERDA ===== -->
 
 
     <!-- ===== COLUNA DIREITA - OUTPUT ===== -->
     <div class="output-col" id="resultado">
-
+        <!-- Placeholder quando vazio -->
+        <div class="result-placeholder">
+            <div class="placeholder-icon">📊</div>
+            <p>Aguardando dados...</p>
+            <span>Preencha seus dados e clique em "Calcular IMC"</span>
+        </div>
     </div>
     <!-- ===== FIM COLUNA DIREITA ===== -->
 
-
 </section>
-
 
 
     <!-- Código-fonte -->
