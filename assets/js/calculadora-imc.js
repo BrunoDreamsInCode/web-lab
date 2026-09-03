@@ -25,28 +25,28 @@ const coresIMC = {
 const mensagensIMC = {
     'magreza': {
         titulo: 'Abaixo do peso',
-        mensagem: 'Procure um nutricionista para ganhar peso de forma saudável! 🥗',
+        mensagem: 'Procure um nutricionista para ganhar peso de forma saudável!',
         dica: 'Alimentação equilibrada é fundamental para ganhar peso com saúde.'
     },
     'normal': {
         titulo: 'Peso normal',
-        mensagem: 'Parabéns! Seu peso está dentro da faixa considerada saudável. 🎉',
+        mensagem: 'Parabéns! Seu peso está dentro da faixa considerada saudável.',
         dica: 'Continue mantendo hábitos saudáveis! A chave é a consistência.'
     },
     'sobrepeso': {
         titulo: 'Sobrepeso',
-        mensagem: 'Considere uma reeducação alimentar e prática de exercícios físicos. 🏃',
+        mensagem: 'Considere uma reeducação alimentar e prática de exercícios físicos.',
         dica: 'Pequenas mudanças no dia a dia fazem grande diferença!'
     },
     'obesidadei': {
         titulo: 'Obesidade Grau I',
-        mensagem: 'Procure orientação médica para controle de peso. 🩺',
+        mensagem: 'Procure orientação médica para controle de peso. ',
         dica: 'Com acompanhamento profissional, você pode alcançar seus objetivos!'
     },
     'obesidadeii': {
         titulo: 'Obesidade Grau II',
-        mensagem: 'Acompanhamento médico é essencial para sua saúde! 🏥',
-        dica: 'Busque ajuda profissional. Sua saúde é prioridade! 💙'  // ← CORRIGIDO
+        mensagem: 'Acompanhamento médico é essencial para sua saúde! ',
+        dica: 'Busque ajuda profissional. Sua saúde é prioridade! ' 
     }
 };
 // ====== FUNÇÃO PARA CALCULAR POSIÇÃO ====== //
@@ -61,9 +61,38 @@ function calcularPosicaoSlidebar(imc) {
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // ====== COLETANDO OS DADOS ====== //
-    const altura = Number(alturaInput.value) / 100;
-    const peso = Number(pesoInput.value);
+    // ====== VALIDAÇÃO DOS CAMPOS ====== //
+    const alturaRaw = alturaInput.value.trim();
+    const pesoRaw = pesoInput.value.trim();
+
+    if (alturaRaw === '' || pesoRaw === '') {
+        resultado.innerHTML = `
+            <div class="result-placeholder" style="border: 2px solid #EF5350; background: #FFEBEE; border-radius: 8px; padding: 30px;">
+                <div class="placeholder-icon">⚠️</div>
+                <p style="color: #C62828; font-weight: 700;">Preencha todos os campos!</p>
+                <span style="color: #D32F2F;">Digite seu peso e altura para calcular o IMC.</span>
+            </div>
+        `;
+        return; 
+    }
+
+    const alturaNum = Number(alturaRaw);
+    const pesoNum = Number(pesoRaw);
+
+    if (isNaN(alturaNum) || isNaN(pesoNum) || alturaNum <= 0 || pesoNum <= 0) {
+        resultado.innerHTML = `
+            <div class="result-placeholder" style="border: 2px solid #EF5350; background: #FFEBEE; border-radius: 8px; padding: 30px;">
+                <div class="placeholder-icon">⚠️</div>
+                <p style="color: #C62828; font-weight: 700;">Valores inválidos!</p>
+                <span style="color: #D32F2F;">Digite números válidos (ex: 70 e 1.75).</span>
+            </div>
+        `;
+        return; 
+    }
+
+    // ====== COLETANDO OS DADOS (SÓ CHEGA AQUI SE TUDO ESTIVER VÁLIDO) ====== //
+    const altura = alturaNum / 100;
+    const peso = pesoNum;
 
     // ====== CÁLCULO DO IMC ====== //
     const imcCalculado = peso / altura ** 2;
@@ -92,16 +121,10 @@ form.addEventListener('submit', function(event) {
     // ====== CALCULAR POSIÇÃO DO INDICADOR ====== //
     const posicao = calcularPosicaoSlidebar(imcCalculado);
 
-    // ====== DEBUG (remova depois) ====== //
-    console.log('📊 DEBUG:');
-    console.log('classificacaoIMC:', classificacaoIMC);
-    console.log('chave:', chave);
-    console.log('info:', info);
-    console.log('info.dica:', info.dica);
 
     // ====== RETORNO PARA O HTML ====== //
     resultado.innerHTML = `
-        <div class="result-card" style="background: ${cor}08; border-color: ${cor}; border: 2px solid;">
+        <div class="result-card" style="background: ${cor}08; border-color: ${cor};">
             <!-- ÍCONE -->
             <div class="icon-wrapper" style="background: ${cor}20; border-radius: 50%; padding: 20px; display: inline-block;">
                 <img 
